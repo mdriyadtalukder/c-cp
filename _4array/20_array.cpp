@@ -7,4 +7,8 @@ main()
     {
         cout << arr[i] << endl;
     }
+
+   int length = sizeof(arr) / sizeof(arr[0]);
+
+    cout<<length;
 }

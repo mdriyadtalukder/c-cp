@@ -1,22 +1,27 @@
 #include <iostream>
-#include <string>    // for std::string
+#include <string> // for std::string
 using namespace std;
 
-int main() {
+int main()
+{
+    // total 14 method
+
     // 1. Create a string
     string str = "Hello";
     cout << "Original string: " << str << endl;
 
     // 2. Append to string
-    str += " World";        // Adds to the end of string
+    str += " World"; // Adds to the end of string
     cout << "After append: " << str << endl;
+    cout << "Length of string: " << str.length() << endl;
 
     // 3. Insert into string
-    str.insert(5, ",");    // Insert "," at index 5
+    str.insert(5, ","); // Insert "," at index 5
     cout << "After insert: " << str << endl;
+    cout << "Length of string: " << str.length() << endl;
 
     // 4. Erase from string
-    str.erase(5, 1);       // Remove 1 character at index 5
+    str.erase(5, 1); // Remove 1 character at index 5
     cout << "After erase: " << str << endl;
 
     // 5. Replace substring
@@ -28,7 +33,8 @@ int main() {
 
     // 7. Find substring
     size_t pos = str.find("C++"); // Returns starting index of substring
-    if (pos != string::npos) {
+    if (pos != string::npos)
+    {
         cout << "\"C++\" found at index: " << pos << endl;
     }
 
@@ -41,36 +47,44 @@ int main() {
     cout << "Size of string: " << str.size() << endl; // same as length()
 
     // 10. Empty check
-    if (str.empty()) {
+    if (str.empty())
+    {
         cout << "String is empty" << endl;
-    } else {
+    }
+    else
+    {
         cout << "String is not empty" << endl;
     }
 
     // 11. Clear string
     string temp = "Temp string";
-    temp.clear();           // Remove all contents
+    temp.clear(); // Remove all contents
     cout << "After clear, temp size: " << temp.size() << endl;
 
     // 12. Compare strings
     string a = "abc";
     string b = "abd";
-    if (a.compare(b) == 0) {
+    if (a.compare(b) == 0)
+    {
         cout << "Strings are equal" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Strings are different" << endl;
     }
 
     // 13. Iterating through string
     cout << "Characters in str: ";
-    for (char c : str) {
+    for (char c : str)
+    {
         cout << c << " ";
     }
     cout << endl;
 
-    // 14. Convert string to C-style string (char array)
-    const char* cstr = str.c_str();
+    // 14. Convert string to C-style string (char array)..make a array with string's characters
+    const char *cstr = str.c_str();
     cout << "C-style string: " << cstr << endl;
+    cout << cstr[0];
 
     return 0;
 }

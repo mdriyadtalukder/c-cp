@@ -7,6 +7,7 @@ pair<int, int> h()
 }
 main()
 {
+    //2 method
     pair<int, string> p = {32, "Riyad"};
 
     p.first = 44; // change 1st value

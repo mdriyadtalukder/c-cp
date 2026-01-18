@@ -2,8 +2,8 @@
 using namespace std;
 int main()
 {
-    // total 27
-    
+    // total 38
+
     //   dynamic sized array
     vector<int> ar(50);     // vector size is 50 with all 0 element..like {0,0,0,0,....}
     vector<int> arr(44, 6); // vector size is 44 with all 6 element..like {6,6,6,6,...}
@@ -52,8 +52,11 @@ int main()
     cout << *(v4.begin()); // 1st value dibe
     cout << *(v4.end());   // last_index+1 index er value dibe ja 0.
 
-    sort(v4.begin(), v4.end()); // sort vector;
-                                // sort(arr,arr+5);//5 is length of arr..way of soring fixed array.
+    // sort(arr,arr+5);//5 is length of arr..way of soring fixed array.
+    // sort(arr,arr+5,greater<int>())..dso
+
+    sort(v4.begin(), v4.end());                 // sort vector;
+    sort(v4.begin(), v4.end(), greater<int>()); // decending order;
 
     cout << endl;
 
@@ -78,6 +81,29 @@ int main()
     {
         cout << *(it) << " ";
     }
+
+    // reverse
+    reverse(v.begin(), v.end());
+    reverse(v.begin() + 1, v.end() + 3); // range reverce
+
+    max_element(v.begin(), v.end()); // get max element
+    min_element(v.begin(), v.end()); // get min element
+
+    cout << binary_search(v.begin(), v.end(), 4); // v te 4 thkle 1 dibe ..na hole 0;
+
+    cout << max(v[1], v[2]) << min(v[1], v[3]);
+
+    int a = 3, b = 5;
+    swap(a, b);
+    cout << a;
+
+    int l = 13;        // 1101 → 3 set bits.. set bits means how many 1 have
+    long l2 = 34;      // 100010 → 2 set bits
+    long long l3 = 45; // 101101 → 4 set bits
+
+    cout << __builtin_popcount(l) << endl;
+    cout << __builtin_popcountl(l2) << endl;
+    cout << __builtin_popcountll(l3) << endl;
 }
 
 /*

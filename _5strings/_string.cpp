@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string> // for std::string
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -85,6 +86,15 @@ int main()
     const char *cstr = str.c_str();
     cout << "C-style string: " << cstr << endl;
     cout << cstr[0];
+
+    // 14
+    string s = "abc";
+
+    next_permutation(s.begin(), s.end());
+    cout << s << endl; // acb
+
+    prev_permutation(s.begin(), s.end());
+    cout << s << endl; // abc
 
     return 0;
 }

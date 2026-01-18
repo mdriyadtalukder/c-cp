@@ -2,6 +2,8 @@
 using namespace std;
 int main()
 {
+
+    // total 7
     // non sequencial container it is.its LIFO like plates
 
     stack<int> s;

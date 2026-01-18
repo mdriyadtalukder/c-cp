@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main()
+
 {
+    //8 method
     // key vlue pair..alway sort hoye ashe key and key unique thke..
     map<string, int> m;
     m["tv"] = 100;

@@ -43,4 +43,6 @@ int main()
     // s.empty();
 
     // multiset and unorderset are same as multiset and unordermap
+
+    //set is unique so eita k multiset ba ununiqur krte pair use krb set e..ektai value r ektai index number thkbe.
 }

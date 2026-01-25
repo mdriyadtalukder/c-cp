@@ -7,11 +7,11 @@ pair<int, int> h()
 }
 main()
 {
-    //2 method
-    pair<int, string> p = {32, "Riyad"};
+    // 2 method
+    pair<int, string> p = {32, "Riyad"}; // O(1)
 
-    p.first = 44; // change 1st value
-    cout << p.first << " " << p.second << endl;
+    p.first = 44;                               // change 1st value
+    cout << p.first << " " << p.second << endl; // O(1)
     pair<int, int> k = h();
     cout << k.first << " " << k.second;
 

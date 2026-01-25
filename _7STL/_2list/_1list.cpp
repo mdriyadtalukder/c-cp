@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    // implemented by doubly linkedlist
+    // implemented by doubly linkedlist..TC same as vector
 
     list<int> l;
     l.push_back(1);

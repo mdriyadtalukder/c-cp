@@ -86,8 +86,8 @@ int main()
     reverse(v.begin(), v.end());
     reverse(v.begin() + 1, v.end() + 3); // range reverce
 
-    max_element(v.begin(), v.end()); // get max element
-    min_element(v.begin(), v.end()); // get min element
+    cout << *max_element(v4.begin(), v4.end()) << endl; // get max elem
+    cout << *min_element(v4.begin(), v4.end()) << endl; // get min elem
 
     cout << binary_search(v.begin(), v.end(), 4); // v te 4 thkle 1 dibe ..na hole 0;
 

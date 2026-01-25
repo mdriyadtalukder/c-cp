@@ -8,7 +8,10 @@ int main()
     // total 14 method
 
     // 1. Create a string
-    string str = "Hello";
+    string str = "Hello", s;
+    cin.ignore();    // ignore the leftover newline
+    cin >> s;        // take a word..like 'hello'
+    getline(cin, s); // take lines
     cout << "Original string: " << str << endl;
 
     // 2. Append to string
@@ -31,6 +34,8 @@ int main()
 
     // 6. Access characters
     cout << "Character at index 1: " << str[1] << endl;
+    cout << "Character at index 1: " << toupper(str[1]) << endl;
+    cout << "Character at index 1: " << tolower(str[1]) << endl;
 
     // 7. Find substring
     size_t pos = str.find("C++"); // Returns starting index of substring
@@ -95,6 +100,10 @@ int main()
 
     prev_permutation(s.begin(), s.end());
     cout << s << endl; // abc
+
+    //
+    s.push_back('.');
+    s.pop_back();
 
     return 0;
 }

@@ -3,8 +3,8 @@ using namespace std;
 int main()
 
 {
-    //8 method
-    // key vlue pair..alway sort hoye ashe key and key unique thke..
+    // 9 method
+    //  key vlue pair..alway sort hoye ashe key and key unique thke..
     map<string, int> m;
     m["tv"] = 100;
     m["tv2"] = 50;

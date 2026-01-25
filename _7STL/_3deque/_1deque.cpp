@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+    //O(1)
     // its similar to list and its created by double ended queue..
 
     // dequeue means pop element from normal queue..its not its part.

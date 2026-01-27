@@ -1,74 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
+int f(int x)
+{
+    int sum = 1;
+    while (x != 0)
+    {
+        int d = x % 10;
+        if (d != 0)
+            sum *= d;
+        x = x / 10;
+    }
+    return sum;
+}
+int g(int x)
+{
+    while (x > 9)
+    {
+        x = f(x);
+    }
+    return x;
+}
 int main()
 {
-    vector<int> v;
-    pair<int, int> p;
-    int x = 0, m = 0, k, inp;
-    cin >> inp;
-    while (inp--)
+    const int max = 1000000;
+    static int ar[10][max + 1]; // only int use stack..Stack → small shelf (limited space)Data segment → warehouse(huge space) .
+    for (int i = 1; i <= max; i++)
     {
-        int l = p.first, r = p.second;
-        cin >> l >> r >> k;
-
-        for (int i = l; i <= r; i++)
+        int gx = g(i);
+        for (int k = 1; k <= 9; k++)
         {
-
-            int temp1 = i;
-
-            while (temp1 > k - 1)
-            {
-
-                if (temp1 > 9)
-                {
-                    int r, temp = temp1;
-                    while (temp != 0)
-                    {
-                        r = temp % 10;
-                        v.push_back(r);
-                        temp = temp / 10;
-                    }
-                    reverse(v.begin(), v.end());
-
-                    if (v.size() >= 2)
-                    {
-                        for (int i = 0; i < v.size(); i++)
-                        {
-                            if (v[i] == 0)
-                            {
-                                v[i] = 1;
-                            }
-                        }
-                        int s = 1;
-                        for (int i = 0; i < v.size(); i++)
-                        {
-                            s *= v[i];
-                        }
-
-                        if (s == k)
-                        {
-                            x++;
-                        }
-                        temp1 = s;
-                    }
-                    m = 1;
-                }
-
-                else
-                {
-
-                    if (temp1 == k && m == 0)
-                    {
-                        x++;
-                    }
-                    temp1 = 0;
-                    m = 0;
-                }
-                v.clear();
-            }
+            ar[k][i] = ar[k][i - 1]; // copy previous counts
         }
-        cout << x << '\n';
-        x = 0;
-        m = 0;
+        ar[gx][i]++; // increment current gx count
+    }
+    int n;
+    cin >> n;
+    while (n--)
+    {
+        int l, r, k;
+        cin >> l >> r >> k;
+        cout << ar[k][r] - ar[k][l - 1] << endl;
     }
 }
+// for k=1..9: pref[k][i]=pref[k][i-1]  // carry previous counts
+// pref[g(i)][i]++                      // add current number
+
+// for k=1..9: pref[k][i] = pref[k][i-1]  // copy previous counts
+// pref[g(x)][i]++            // increment count for current number

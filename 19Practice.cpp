@@ -1,49 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
-int f(int x)
-{
-    int sum = 1;
-    while (x != 0)
-    {
-        int d = x % 10;
-        if (d != 0)
-            sum *= d;
-        x = x / 10;
-    }
-    return sum;
-}
-int g(int x)
-{
-    while (x > 9)
-    {
-        x = f(x);
-    }
-    return x;
-}
 int main()
 {
-    const int max = 1000000;
-    static int ar[10][max + 1]; // only int use stack..Stack → small shelf (limited space)Data segment → warehouse(huge space) .
-    for (int i = 1; i <= max; i++)
-    {
-        int gx = g(i);
-        for (int k = 1; k <= 9; k++)
-        {
-            ar[k][i] = ar[k][i - 1]; // copy previous counts
-        }
-        ar[gx][i]++; // increment current gx count
-    }
-    int n;
-    cin >> n;
-    while (n--)
-    {
-        int l, r, k;
-        cin >> l >> r >> k;
-        cout << ar[k][r] - ar[k][l - 1] << endl;
-    }
-}
-// for k=1..9: pref[k][i]=pref[k][i-1]  // carry previous counts
-// pref[g(i)][i]++                      // add current number
+    int x, y, z, count = 0;
+    bool b = true;
+    map<string, int> m;
+    cin >> x >> y >> z;
+    m["x"] = x * 1;
+    m["y"] = y * 2;
+    m["z"] = z * 3;
 
-// for k=1..9: pref[k][i] = pref[k][i-1]  // copy previous counts
-// pref[g(x)][i]++            // increment count for current number
+    for (int i = 0; b; i++)
+    {
+        b = false;
+        if (m["x"] > 0 && m["z"] > 2)
+        {
+            m["x"] -= 1;
+            m["z"] -= 3;
+            count++;
+            b = true;
+        }
+        else if (m["x"] > 1 && (m["y"] > 1 && m["z"] == 0))
+        {
+            m["x"] -= 2;
+            m["y"] -= 2;
+            count++;
+            b = true;
+        }
+        else if (m["x"] <= 1 && m["y"] > 3 && m["z"] == 0)
+        {
+            m["y"] -= 4;
+            count++;
+            b = true;
+        }
+    }
+    cout << count;
+}

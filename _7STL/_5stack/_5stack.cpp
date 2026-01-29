@@ -23,3 +23,14 @@ int main()
     stack<int> s2;
     s2.swap(s); // s er sob value s2 te ashbe and s empty hoye jbe..
 }
+/*
+Operation        | Time Complexity       | Space Complexity
+----------------------------------------------------------
+push(x)          | O(1) amortized       | O(1)
+emplace(x)       | O(1) amortized       | O(1)
+pop()            | O(1)                 | O(1)
+front()          | O(1)                 | O(1)
+back()           | O(1)                 | O(1)
+empty()          | O(1)                 | O(1)
+size()           | O(1)                 | O(1)
+*/

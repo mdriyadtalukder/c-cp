@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    // its FIFO
+    // its FIFO..TC same as stack
     queue<int> q;
     q.push(1); // o(1)
     q.push(2);

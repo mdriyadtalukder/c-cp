@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+//double-ended queue
 int main()
 {
-    //O(1)
+    //TC same as vector
     // its similar to list and its created by double ended queue..
 
     // dequeue means pop element from normal queue..its not its part.

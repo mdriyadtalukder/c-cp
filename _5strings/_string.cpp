@@ -13,7 +13,6 @@ int main()
     cin >> s;        // take a word..like 'hello'
     getline(cin, s); // take lines
     cout << "Original string: " << str << endl;
-
     // 2. Append to string
     str += " World"; // Adds to the end of string
     cout << "After append: " << str << endl;

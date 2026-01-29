@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// vector is C++’s built-in implementation of a doubly linked list.
+
 int main()
 {
     // implemented by doubly linkedlist..TC same as vector

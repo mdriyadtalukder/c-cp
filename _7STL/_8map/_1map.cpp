@@ -51,6 +51,7 @@ int main()
 
     // unordered_map same as map..it print values in random way..not sort way..its very usefull then map then multimap:
 
+    // implemented of hash table
     unordered_map<string, int> m3;
     m3["tv"] = 100;
     m3["tv2"] = 50;
@@ -65,3 +66,33 @@ int main()
 
     // unorder_map vs map------map's count,erase,insert..... TC=O(logn) but unorder_map is O(1);
 }
+
+/*
+for unorder map and set
+Operation           | Time Complexity        | Space Complexity
+--------------------------------------------------------------
+insert(val)         | O(1) average, O(n) worst | O(1)
+emplace(val)        | O(1) average, O(n) worst | O(1)
+erase(val)          | O(1) average, O(n) worst | O(1)
+find(val)           | O(1) average, O(n) worst | O(1)
+count(val)          | O(1) average, O(n) worst | O(1)
+size()              | O(1)                     | O(1)
+empty()             | O(1)                     | O(1)
+
+
+*/
+
+/*
+all maps and sets except unorder
+Operation           | Time Complexity        | Space Complexity
+--------------------------------------------------------------
+insert(key, val)    | O(log n)              | O(1)
+emplace(key, val)   | O(log n)              | O(1)
+erase(key)          | O(log n)              | O(1)
+find(key)           | O(log n)              | O(1)
+operator[](key)     | O(log n)              | O(1)
+count(key)          | O(log n)              | O(1)
+size()              | O(1)                  | O(1)
+empty()             | O(1)                  | O(1)
+
+*/

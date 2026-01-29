@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+// vector is C++’s built-in implementation of a dynamic array.
+
 int main()
 {
     // total 38

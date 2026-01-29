@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// TC O(1)
 pair<int, int> h()
 {
     return {1, 2};

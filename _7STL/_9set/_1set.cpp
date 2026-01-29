@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 
-    //11 methods
+    // 11 methods
     set<int> s;
 
     s.insert(10); // O(logn)
@@ -44,5 +44,6 @@ int main()
 
     // multiset and unorderset are same as multiset and unordermap
 
-    //set is unique so eita k multiset ba ununiqur krte pair use krb set e..ektai value r ektai index number thkbe.
+    // set is unique so eita k multiset ba ununiqur krte pair use krb set e..ektai value r ektai index number thkbe.
+    ////unorder_map is  implemented of hash table
 }

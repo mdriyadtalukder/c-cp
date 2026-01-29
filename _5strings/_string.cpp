@@ -92,17 +92,17 @@ int main()
     cout << cstr[0];
 
     // 14
-    string s = "abc";
+    string ss = "abc";
 
-    next_permutation(s.begin(), s.end());
-    cout << s << endl; // acb
+    next_permutation(ss.begin(), ss.end());
+    cout << ss << endl; // acb
 
-    prev_permutation(s.begin(), s.end());
-    cout << s << endl; // abc
+    prev_permutation(ss.begin(), ss.end());
+    cout << ss << endl; // abc
 
-    //
-    s.push_back('.');
-    s.pop_back();
+    
+    ss.push_back('.');
+    ss.pop_back();
 
     return 0;
 }

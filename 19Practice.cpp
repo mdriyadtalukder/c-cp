@@ -5,13 +5,24 @@ int main()
 {
     string s, s1;
     cin >> s >> s1;
-    reverse(s.begin(), s.end());
+    for (char i : s)
+    {
+        i = tolower(i);
+    }
+    for (char i : s1)
+    {
+        i = tolower(i);
+    }
+    if (s > s1)
+    {
+        cout << 1 << endl;
+    }
+    if (s < s1)
+    {
+        cout << -1 << endl;
+    }
     if (s == s1)
     {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
+        cout << 0 << endl;
     }
 }

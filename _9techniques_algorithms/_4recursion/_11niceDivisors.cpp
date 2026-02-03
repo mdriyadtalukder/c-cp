@@ -14,8 +14,9 @@ long long power(long long b, long long x)
     return ans;
 }
 
-int maxNiceDivisors(int n)
+int main()
 {
+    int n = 5;
     if (n == 1)
         return 1;
 
@@ -32,11 +33,7 @@ int maxNiceDivisors(int n)
     {                                      // n % 3 == 2
         ans = (2 * power(3, n / 3)) % mod; // One 2 + rest 3s
     }
-    return ans;
-}
-int main()
-{
-    cout << maxNiceDivisors(5);
+    cout << ans;
 }
 
 /*

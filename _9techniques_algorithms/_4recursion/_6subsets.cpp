@@ -11,13 +11,13 @@ void allSets(vector<int> &v, vector<int> &ans, int i, vector<vector<int>> &allsu
             cout << i << " ";
         }
         cout << endl;
-        return;
+        return; //backtrack
     }
     // inclution--tick
     ans.push_back(v[i]);
     allSets(v, ans, i + 1, allsubs);
 
-    ans.pop_back(); // backtrack--uporer index e jai
+    ans.pop_back(); // backtracking
     allSets(v, ans, i + 1, allsubs); //exclution--cross
     // return allsubs;
 }

@@ -1,28 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    string s, s1;
-    cin >> s >> s1;
-    for (char i : s)
+    int n, a, b, sum = 0, r = 0;
+    cin >> n;
+    while (n--)
     {
-        i = tolower(i);
+        cin >> a >> b;
+        sum = (sum - abs(a)) + b;
+        if (sum > r)
+        {
+            r = sum;
+        }
     }
-    for (char i : s1)
-    {
-        i = tolower(i);
-    }
-    if (s > s1)
-    {
-        cout << 1 << endl;
-    }
-    if (s < s1)
-    {
-        cout << -1 << endl;
-    }
-    if (s == s1)
-    {
-        cout << 0 << endl;
-    }
+    cout << r << endl;
 }

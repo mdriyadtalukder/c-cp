@@ -226,3 +226,19 @@ int main()
 
     operator<<(cout, ar);
 }
+/*
+==================== TIME COMPLEXITY ====================
+
+sort()                               | O(n log n)
+(std::sort uses Introsort: quicksort + heapsort + insertion sort)
+
+reverse()                            | O(n)
+(swaps elements from both ends)
+
+binary_search(key)                   | O(log n)
+(requires array to be sorted)
+
+IntVector(const int a[], int n)        | O(n)
+(copies n elements from input array)
+========================================================
+*/

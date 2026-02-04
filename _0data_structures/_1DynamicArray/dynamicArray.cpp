@@ -112,7 +112,7 @@ public:
             throw out_of_range("Index out of bounds");
 
         // Call destructor of the removed element
-       // data[index].~T();
+        // data[index].~T();
 
         // Shift remaining elements left
         for (size_t i = index; i < size_ - 1; i++)
@@ -204,3 +204,66 @@ int main()
     for (auto x : v)
         cout << x << " ";
 }
+/*
+==================== TIME COMPLEXITY TABLE ====================
+
+CLASS / METHOD / OPERATION            | TIME COMPLEXITY
+-------------------------------------------------------
+MyVector() constructor                | O(1)
+MyVector(capacity) constructor        | O(1)
+
+~MyVector() destructor                | O(n)
+(delete[] calls destructor for n elements)
+
+-------------------------------------------------------
+size()                                | O(1)
+capacity()                            | O(1)
+empty()                               | O(1)
+
+-------------------------------------------------------
+at(index)                             | O(1)
+operator[](index)                    | O(1)
+front()                               | O(1)
+back()                                | O(1)
+
+-------------------------------------------------------
+push_back(value) [average]            | O(1) amortized
+push_back(value) [worst case]         | O(n)
+(due to reallocate + copy)
+
+pop_back()                            | O(1)
+
+clear()                               | O(n)
+(calls destructor for each element)
+
+-------------------------------------------------------
+erase(index)                          | O(n)
+(shifts elements to the left)
+
+remove(value)                         | O(n)
+(search O(n) + erase O(n) → still O(n))
+
+-------------------------------------------------------
+indexOf(value)                        | O(n)
+(linear search)
+
+contains(value)                       | O(n)
+(calls indexOf)
+
+-------------------------------------------------------
+begin()                               | O(1)
+end()                                 | O(1)
+
+-------------------------------------------------------
+operator<< (ostream << vector)        | O(n)
+(iterates over all elements)
+
+-------------------------------------------------------
+reallocate(newCapacity)               | O(n)
+(copies all existing elements)
+
+-------------------------------------------------------
+Range-based for loop (for(auto x:v))  | O(n)
+
+=======================================================
+*/

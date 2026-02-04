@@ -65,8 +65,18 @@ public:
         return arr[index]; // no bounds check (like std::vector)
     }
 
-    int front() const { return arr[0]; }
-    int back() const { return arr[len - 1]; }
+    int front() const
+    {
+        if (empty())
+            throw out_of_range("Vector is empty");
+        return arr[0];
+    }
+    int back() const
+    {
+        if (empty())
+            throw out_of_range("Vector is empty");
+        return arr[len - 1];
+    }
 
     /* ================= MODIFIERS ================= */
 
@@ -84,17 +94,25 @@ public:
     {
         if (empty())
             throw out_of_range("Vector is empty");
+        arr[len - 1] = 0;
         len--;
     }
 
     void clear()
     {
-        len = 0; // keep memory (same as std::vector)
+        // delete[] arr;       // free all memory
+        // arr = new int[cap]; // allocate new array with same capacity
+
+        for (int i = 0; i < len; i++)
+        {
+            arr[i] = 0;
+        }
+        len = 0; // reset logical size
     }
 
     /* ================= SEARCH ================= */
 
-    int indexOf(int value) const
+    int indexOf(int value) const // const means indexof does not change the vector.It only reads the data
     {
         for (int i = 0; i < len; i++)
             if (arr[i] == value)
@@ -119,7 +137,7 @@ public:
             arr[i] = arr[i + 1];
 
         len--;
-        cap--; // keeping same behavior as your Java code
+        // cap--; // keeping same behavior as your Java code
     }
 
     // erase by value
@@ -145,12 +163,12 @@ public:
             std::swap(arr[i], arr[len - i - 1]);
     }
 
-    int binary_search(int key)
+    int binary_search(int key) const
     {
-        auto it = std::lower_bound(arr, arr + len, key);
-        if (it != arr + len && *it == key)
-            return it - arr;
-        return -1;
+        // std::binary_search returns true if key exists in [arr, arr + len)
+        bool found = std::binary_search(arr, arr + len, key);
+
+        return found ? 1 : 0; // 1 if found, 0 if not
     }
 
     /* ================= ITERATORS ================= */
@@ -160,7 +178,7 @@ public:
 
     /* ================= PRINT ================= */
 
-    friend ostream &operator<<(ostream &os, const IntVector &v)
+    friend ostream &operator<<(ostream &os, const IntVector &v) // friend = lets the function access private stuff.cout is an output stream..operator<< is just a function that tells C++ how to print something.v.arr[i] Direct access to array inside class .Works in friend function
     {
         os << "[";
         for (int i = 0; i < v.len; i++)
@@ -190,11 +208,21 @@ int main()
     ar.push_back(4);
 
     ar[3] = 5;
+    ar.sort();
+    cout << "bi " << ar.binary_search(22) << endl; // need sort array
+
     ar.reverse();
 
-    cout << ar.binary_search(3) << endl;
     cout << ar << endl;
 
     for (int x : ar)
         cout << x << " ";
+
+    cout << endl;
+
+    // iteration
+    for (int *it = ar.begin(); it != ar.end(); ++it)
+        cout << *it << " "; // prints 10 20 30
+
+    operator<<(cout, ar);
 }

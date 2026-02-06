@@ -62,6 +62,8 @@ public:
 
     int &operator[](int index)
     {
+        if (index < 0 || index >= len)
+            throw out_of_range("Index out of bounds");
         return arr[index]; // no bounds check (like std::vector)
     }
 
@@ -94,7 +96,7 @@ public:
     {
         if (empty())
             throw out_of_range("Vector is empty");
-        arr[len - 1] = 0;
+        arr[len - 1] = arr[len];
         len--;
     }
 
@@ -133,11 +135,21 @@ public:
         if (index < 0 || index >= len)
             throw out_of_range("Index out of bounds");
 
-        for (int i = index; i < len - 1; i++)
-            arr[i] = arr[i + 1];
+        // Allocate new smaller array
+        int *newData = new int[len - 1]; // keep capacity same, or you can shrink
 
-        len--;
-        // cap--; // keeping same behavior as your Java code
+        for (int i = 0, j = 0; i < len; i++, j++)
+        {
+            if (i == index)
+                j--;             // skip the element to erase
+            newData[j] = arr[i]; // copy other elements
+        }
+
+        // Destroy old array
+        delete[] arr;
+
+        arr = newData;
+        cap = --len; // reduce logical size
     }
 
     // erase by value
@@ -200,31 +212,17 @@ public:
 };
 int main()
 {
-    IntVector ar(14);
+    IntVector ar;
 
     ar.push_back(1);
     ar.push_back(2);
     ar.push_back(3);
+    ar.pop_back();
     ar.push_back(4);
+    ar.erase(2);
+    ar.push_back(34);
 
-    ar[3] = 5;
-    ar.sort();
-    cout << "bi " << ar.binary_search(22) << endl; // need sort array
-
-    ar.reverse();
-
-    cout << ar << endl;
-
-    for (int x : ar)
-        cout << x << " ";
-
-    cout << endl;
-
-    // iteration
-    for (int *it = ar.begin(); it != ar.end(); ++it)
-        cout << *it << " "; // prints 10 20 30
-
-    operator<<(cout, ar);
+    cout << ar[2];
 }
 /*
 ==================== TIME COMPLEXITY ====================

@@ -50,13 +50,15 @@ public:
 
     T &at(size_t index)
     {
-        if (index >= size_)
+        if (index < 0 || index >= size_)
             throw out_of_range("Index out of bounds");
         return data[index];
     }
 
     T &operator[](size_t index)
-    { // no bounds check
+    {
+        if (index < 0 || index >= size_)
+            throw out_of_range("Index out of bounds");
         return data[index];
     }
 
@@ -89,9 +91,9 @@ public:
     void pop_back()
     {
         if (empty())
-            throw out_of_range("Vector is empty");
+            throw std::out_of_range("Vector is empty");
 
-        data[size_ - 1] = 0;
+        data[size_ - 1].~T(); // destroy last element
         size_--;
     }
 
@@ -108,17 +110,24 @@ public:
 
     void erase(size_t index)
     {
-        if (index >= size_)
+        if (index >= size_ && index < 0)
             throw out_of_range("Index out of bounds");
 
-        // Call destructor of the removed element
-        // data[index].~T();
+        // Allocate new smaller array
+        T *newData = new T[size_ - 1]; // keep capacity same, or you can shrink
 
-        // Shift remaining elements left
-        for (size_t i = index; i < size_ - 1; i++)
-            data[i] = data[i + 1];
+        for (size_t i = 0,j=0; i < size_; i++, j++)
+        {
+            if (i == index)
+                j--;              // skip the element to erase
+            newData[j] = data[i]; // copy other elements
+        }
 
-        size_--;
+        // Destroy old array
+        delete[] data;
+
+        data = newData;
+        capacity_ = --size_; // reduce logical size
     }
 
     // Remove by value (first occurrence)
@@ -182,27 +191,17 @@ public:
 };
 int main()
 {
-    MyVector<string> v(3);
+    MyVector<int> v;
 
-    v.push_back("am");
-    v.push_back("jam");
-    v.push_back("kk");
-
-    v[1] = "kola";
-
-    cout << v.size() << endl;
-    cout << v.capacity() << endl;
-    cout << v.empty() << endl;
-    cout << v.indexOf("kk") << endl;
-    cout << v.contains("kk") << endl;
-    cout << v << endl;
-
-    v.remove("kola");
-    cout << v << endl;
-    v.clear();
-
-    for (auto x : v)
-        cout << x << " ";
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.pop_back();
+    // cout << v.at(2);
+    v.push_back(4);
+    v.erase(2);
+    v.push_back(34);
+    cout << v[2];
 }
 /*
 ==================== TIME COMPLEXITY TABLE ====================

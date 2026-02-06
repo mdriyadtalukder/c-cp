@@ -99,10 +99,9 @@ public:
 
     void clear()
     {
-        for (size_t i = 0; i < size_; i++)
-        {
-            data[i].~T(); // manually call destructor..Calls destructor of one element..and delete that.
-        }
+        delete[] data;
+        T *data = new T[capacity_];
+
         size_ = 0;
     }
 
@@ -116,7 +115,7 @@ public:
         // Allocate new smaller array
         T *newData = new T[size_ - 1]; // keep capacity same, or you can shrink
 
-        for (size_t i = 0,j=0; i < size_; i++, j++)
+        for (size_t i = 0, j = 0; i < size_; i++, j++)
         {
             if (i == index)
                 j--;              // skip the element to erase

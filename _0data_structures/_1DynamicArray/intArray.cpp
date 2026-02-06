@@ -102,13 +102,9 @@ public:
 
     void clear()
     {
-        // delete[] arr;       // free all memory
-        // arr = new int[cap]; // allocate new array with same capacity
+        delete[] arr;       // free all memory
+        arr = new int[cap]; // allocate new array with same capacity
 
-        for (int i = 0; i < len; i++)
-        {
-            arr[i] = 0;
-        }
         len = 0; // reset logical size
     }
 
@@ -221,8 +217,11 @@ int main()
     ar.push_back(4);
     ar.erase(2);
     ar.push_back(34);
+    ar.clear();
+    ar.push_back(11);
 
-    cout << ar[2];
+    cout << ar[0];
+    cout << ar.size();
 }
 /*
 ==================== TIME COMPLEXITY ====================

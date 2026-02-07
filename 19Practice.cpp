@@ -2,8 +2,15 @@
 using namespace std;
 int main()
 {
-    vector<int> v;
-    v.push_back(1);
-    v.push_back(2);
-    cout << v[3];
+    int length = 6;
+    float key = 0;
+    if (length % 2 == 0)
+    {
+        key = (length / 2) + 1;
+    }
+    else
+    {
+        key = ceil((float)length / 2);
+    }
+    cout << key;
 }

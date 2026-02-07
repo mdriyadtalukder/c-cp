@@ -187,6 +187,36 @@ public:
     {
         return size() == 0;
     }
+
+    /// problems
+    int middleOfList()
+    {
+
+
+        int length = 0, l = 0;
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            temp = temp->next;
+            length++;
+        }
+
+        int key = (length / 2) + 1;
+
+        Node *temp2 = head;
+        int ans;
+        while (temp2 != NULL)
+        {
+            l++;
+            if (l == key)
+            {
+                ans = temp2->data;
+            }
+
+            temp2 = temp2->next;
+        }
+        return ans;
+    }
 };
 int main()
 {
@@ -195,6 +225,9 @@ int main()
     l.push_front(2);
     l.push_front(3);
     l.push_back(4);
+    l.push_back(5);
+    l.push_back(52);
+    l.push_back(52);
     // l.pop_front();
     // l.pop_back();
     // l.insert(4, 3);
@@ -204,8 +237,9 @@ int main()
     // l.remove(1);
     // l.remove(2);
     // l.remove(3);
-    cout << l.size();
+    // cout << l.size();
     l.printAll();
+    cout << l.middleOfList();
 
     // for (int val : l)
     // {

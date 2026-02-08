@@ -2,22 +2,16 @@
 using namespace std;
 int main()
 {
-    vector<int> v(4);
-    int c = 0;
-    for (int i = 0; i < 4; i++)
+    int n = 0100101;
+    vector<int> v(7);
+    while (n != 0)
     {
-        cin >> v[i];
+        v.push_back(n % 10);
+        n = n / 10;
     }
-    for (int i = 0; i < 4; i++)
+    reverse(v.begin(), v.end());
+    for (int i : v)
     {
-        for (int j = i + 1; j < 4; j++)
-        {
-            if (v[i] == v[j] && v[i] > 0)
-            {
-                v[j] = -1;
-                c++;
-            }
-        }
+        cout << i << " ";
     }
-    cout << c << endl;
 }

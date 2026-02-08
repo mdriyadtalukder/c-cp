@@ -2,15 +2,22 @@
 using namespace std;
 int main()
 {
-    int length = 6;
-    float key = 0;
-    if (length % 2 == 0)
+    vector<int> v(4);
+    int c = 0;
+    for (int i = 0; i < 4; i++)
     {
-        key = (length / 2) + 1;
+        cin >> v[i];
     }
-    else
+    for (int i = 0; i < 4; i++)
     {
-        key = ceil((float)length / 2);
+        for (int j = i + 1; j < 4; j++)
+        {
+            if (v[i] == v[j] && v[i] > 0)
+            {
+                v[j] = -1;
+                c++;
+            }
+        }
     }
-    cout << key;
+    cout << c << endl;
 }

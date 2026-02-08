@@ -169,6 +169,10 @@ public:
     {
         for (int i = 0; i < len / 2; i++)
             std::swap(arr[i], arr[len - i - 1]);
+
+        // int temp = arr[i];
+        // arr[i] = arr[len - i - 1]; // 1st elem go to last according to slot
+        // arr[len - i - 1] = temp; // last elem go to 1st according to slot
     }
 
     int binary_search(int key) const

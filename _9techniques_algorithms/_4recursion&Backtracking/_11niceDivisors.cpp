@@ -37,7 +37,7 @@ int main()
 }
 
 /*
-n=7---[2,2,3]-.all prime numbers-so---2² × 3¹---base=2*1=2..so nice divisors=2;
+n=7---[2,2,3]-..2+2+3=7...all prime numbers-so---2² × 3¹---base=2*1=2..so nice divisors=2;
 
 Suppose the prime factorization of n is 2² × 3¹ (i.e., [2, 2, 3]).
 Then the nice divisors are all numbers of the form 2^a * 3^b where:

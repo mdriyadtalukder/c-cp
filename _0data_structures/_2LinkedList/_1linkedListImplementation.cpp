@@ -106,7 +106,7 @@ public:
             return;
         }
         Node *temp = head;
-        for (int i = 0; i < pos; i++)
+        for (int i = 0; i < pos - 1; i++)
         {
             temp = temp->next; // head->next=2nd elem
         }
@@ -192,7 +192,6 @@ public:
     int middleOfList()
     {
 
-
         int length = 0, l = 0;
         Node *temp = head;
         while (temp != NULL)
@@ -221,13 +220,13 @@ public:
 int main()
 {
     LinkedList l;
-    l.push_front(1);
-    l.push_front(2);
-    l.push_front(3);
-    l.push_back(4);
-    l.push_back(5);
-    l.push_back(52);
-    l.push_back(52);
+    // l.push_front(1);
+    // l.push_front(2);
+    // l.push_front(3);
+    // l.push_back(4);
+    // l.push_back(5);
+    // l.push_back(52);
+    // l.push_back(52);
     // l.pop_front();
     // l.pop_back();
     // l.insert(4, 3);
@@ -238,6 +237,17 @@ int main()
     // l.remove(2);
     // l.remove(3);
     // cout << l.size();
+    l.push_front(1);
+    l.push_front(11);
+    l.push_front(12);
+    l.push_back(33);
+    l.push_back(34);
+    l.push_front(100);
+    l.push_back(200);
+    l.pop_front();
+    l.pop_front();
+    l.pop_back();
+    l.insert(300, 2);
     l.printAll();
     cout << l.middleOfList();
 

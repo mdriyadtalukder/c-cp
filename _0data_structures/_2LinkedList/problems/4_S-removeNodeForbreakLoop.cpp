@@ -25,7 +25,7 @@ public:
         slow = head;
         ListNode *pre = NULL;
 
-        while (slow != false)
+        while (slow != fast)
         {
             slow = slow->next;
             pre=fast; //always store previous value of fast

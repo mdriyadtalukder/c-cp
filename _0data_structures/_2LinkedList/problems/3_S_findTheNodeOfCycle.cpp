@@ -24,7 +24,7 @@ public:
             return NULL;
 
         slow = head;
-        while (slow != false)
+        while (slow != fast)
         {
             slow = slow->next;
             fast = fast->next;

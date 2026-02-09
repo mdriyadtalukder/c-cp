@@ -1,17 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int n = 0100101;
-    vector<int> v(7);
-    while (n != 0)
+    string s;
+    bool a = true;
+    int n;
+    map<char, int> m;
+
+    cin >> n;
+    cin.ignore();
+    cin >> s;
+
+    for (int i = 0; i < n; i++)
     {
-        v.push_back(n % 10);
-        n = n / 10;
+        s[i] = tolower(s[i]);
+
+        m[s[i]] += 1;
     }
-    reverse(v.begin(), v.end());
-    for (int i : v)
+    for (char ch = 'a'; ch <= 'z'; ch++)
     {
-        cout << i << " ";
+        if (m[ch] == 0)
+        {
+            a = false;
+            break;
+        }
+    }
+    if (a)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
     }
 }

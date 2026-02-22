@@ -77,10 +77,11 @@ public:
         }
         Node *temp = tail;
         tail = tail->pre;
-        if (tail != NULL)
-        {
-            tail->next = NULL;
-        }
+        // if (tail != NULL)
+        // {
+        //     tail->next = NULL;
+        // }
+        tail->next = NULL;
         temp->pre = NULL;
         delete temp;
         length--;

@@ -100,7 +100,7 @@ public:
     void clear()
     {
         delete[] data;
-        T *data = new T[capacity_];
+        data = new T[capacity_];
 
         size_ = 0;
     }
@@ -201,6 +201,7 @@ int main()
     v.erase(2);
     v.push_back(34);
     cout << v[2];
+    operator<<(cout, v);
 }
 /*
 ==================== TIME COMPLEXITY TABLE ====================

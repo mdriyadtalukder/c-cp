@@ -42,7 +42,7 @@ void genPan(string s, int n, int o, int c)
 }
 int main()
 {
-    int n = 3;
+    int n = 2;
     int open = 0, close = 0;
     string s = "";
     genPan(s, n, open, close);

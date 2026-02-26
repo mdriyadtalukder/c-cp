@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+//Monotonic Stack
 int main()
 {
     vector<int> v = {100, 80, 60, 70, 60, 75, 85}, v2;

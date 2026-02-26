@@ -2,15 +2,27 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin >> n;
-    while (n--)
+    vector<int> v = {100, 80, 60, 70, 60, 75, 85}, v2;
+
+    for (int i = 0; i < v.size(); i++)
     {
-        string s;
-        cin >> s;
-        const char *cs = s.c_str();
-        int a = cs[0] - '0';
-        int b = cs[1] - '0';
-        cout << a + b << endl;
+        int n = 0;
+        for (int j = i; j >=0; j--)
+        {
+            if (v[j] <= v[i])
+            {
+                n++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        v2.push_back(n);
+    }
+
+    for (int ii : v2)
+    {
+        cout << ii << " ";
     }
 }

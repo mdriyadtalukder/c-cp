@@ -1,4 +1,4 @@
-// pani kon dik diye porbe right or left..jeta choto oita diye porbe.left and right er max height ber krbo then oi 2 tar min ber kre urrent height er shthe minus krbo.
+// pani kon dik diye porbe right or left..jeta choto oita diye porbe.left and right er max height ber krbo then oi 2 tar min ber kre current height er shthe minus krbo.
 #include <bits/stdc++.h>
 using namespace std;
 int main()

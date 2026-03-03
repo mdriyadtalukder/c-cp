@@ -43,5 +43,6 @@ int main()
             ans += rmax - heights[r];
             r--;
         }
+      }
         return ans;*/
 }

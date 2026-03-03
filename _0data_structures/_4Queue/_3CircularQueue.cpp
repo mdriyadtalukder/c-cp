@@ -25,7 +25,7 @@ public:
             return;
         }
 
-        r = (r + 1) % cap;
+        r = (r + 1) % cap; //range jate otikrom na kre..3%3=0..so 0 index e je..
         arr[r] = data;
         currSize++;
     }

@@ -2,17 +2,19 @@
 using namespace std;
 int main()
 {
-    string l = "level";
-    unordered_map<char, int> m;
-    for (int i = 0; i < l.length(); i++)
+    long long x;
+    cin >> x;
+    while (x--)
     {
-        m[l[i]] += 1;
-    }
-    for (auto n : l)
-    {
-        if (m[n] == 1)
+        long long n;
+        cin >> n;
+        if (n % 2 == 0)
         {
-            cout << n;
+            cout << (n / 2) - 1 << endl;
+        }
+        else
+        {
+            cout << n / 2 << endl;
         }
     }
 }

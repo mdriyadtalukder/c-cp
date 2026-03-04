@@ -2,19 +2,12 @@
 using namespace std;
 int main()
 {
-    long long x;
-    cin >> x;
-    while (x--)
-    {
-        long long n;
-        cin >> n;
-        if (n % 2 == 0)
-        {
-            cout << (n / 2) - 1 << endl;
-        }
-        else
-        {
-            cout << n / 2 << endl;
-        }
-    }
+    int n, k, l, c, d, p, nl, np;
+    cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+    int a, b, x, y;
+    a = (k * l) / nl;
+    b = c * d;
+    x = p / np;
+    y = min(a, b);
+    cout << min(x, y) / n << endl;
 }

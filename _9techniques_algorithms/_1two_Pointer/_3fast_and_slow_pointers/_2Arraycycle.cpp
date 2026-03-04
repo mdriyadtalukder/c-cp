@@ -22,7 +22,7 @@ bool hasCycle(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {1, 2, 3, 4, 2};
+    vector<int> arr = {1, 2, 3, 4, 2}; //{3, 1, 3, 4, 2}
 
     if (hasCycle(arr))
         cout << "Cycle Found";

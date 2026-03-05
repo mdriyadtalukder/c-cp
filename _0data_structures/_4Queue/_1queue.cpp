@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*struct Node { //it always public..not need to mention
+   int data;
+   Node* next;
 
+   // Constructor
+   Node(int val) {
+       data = val;
+       next = nullptr;
+   }
+};*/
 class Node
 {
 public:

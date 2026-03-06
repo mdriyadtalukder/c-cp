@@ -5,12 +5,14 @@ int main()
 {
     // 9 method
     //  key vlue pair..alway sort hoye ashe key and key unique thke..
-    map<string, int> m;
+    map<string, int> m; // accending order e print hbe
+                        // map<string, int, greater<string>> m; // decending order e print hbe
     m["tv"] = 100;
     m["tv2"] = 50;
     m["tv3"] = 20;
     m["phone"] = 10;
     m.insert({"iphn", 300});
+    // record.insert(make_pair(1, "ria"));
     m.emplace("iphn17", 70);
 
     m.erase("tv3"); // tv3 rmv krbe

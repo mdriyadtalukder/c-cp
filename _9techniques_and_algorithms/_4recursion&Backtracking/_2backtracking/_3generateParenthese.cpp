@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// TC=O(2^(2n) * n)
 vector<string> res;
 // bool isValid(string s)
 // {

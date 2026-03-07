@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-// int countSolutions=0;
+// TC=O(n!)
+//  int countSolutions=0;
 bool isQueen(vector<string> &v, int row, int col, int n)
 {
     for (int j = 0; j < n; j++) //-------------..horizontally

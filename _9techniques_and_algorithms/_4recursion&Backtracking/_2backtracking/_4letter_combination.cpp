@@ -25,9 +25,9 @@ int main()
     mp['2'] = "abc";
     mp['3'] = "def";
     mp['4'] = "ghi";
-    mp['5'] = "jkl";
+    mp['5'] = "jkl"; // TC=O(3*b^n);
     mp['6'] = "mno";
-    mp['7'] = "pqrs";
+    mp['7'] = "pqrs"; // TC=O(4*b^n);..worst case
     mp['8'] = "tuv";
     mp['9'] = "wxyz";
     int i = 0;

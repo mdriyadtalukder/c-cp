@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// string of vector nibo and all ement er jnno letter count krbo..jid all letter which have in map%n==0 then true..coz sob words ek hbe..
 bool canMakeEqual(vector<string> &v)
 {
     unordered_map<char, int> m;

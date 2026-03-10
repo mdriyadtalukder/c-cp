@@ -2,11 +2,20 @@
 using namespace std;
 int main()
 {
-    vector<int> v(4);
-    for (int i = 0; i < 4; i++)
+    int x;
+    cin >> x;
+    while (x--)
     {
-        cin >> v[i];
+        int a, b;
+        cin >> a >> b;
+        int c = abs(a - b);
+        if (c % 10 == 0)
+        {
+            cout << c / 10 << endl;
+        }
+        else
+        {
+            cout << (c / 10) + 1 << endl;
+        }
     }
-    sort(v.begin(), v.end());
-    cout << v[3] - v[2] << " " << v[3] - v[1] << " " << v[3] - v[0] << endl;
 }

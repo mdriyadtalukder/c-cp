@@ -3,44 +3,26 @@ using namespace std;
 
 int main()
 {
-    string s;
-    cin >> s;
-    vector<int> v;
-    int c = 0;
-    bool b = false;
-
-    for (int i = 0; i < s.length(); i++)
+    int x;
+    cin >> x;
+    while (x--)
     {
-        if (b)
+        int a, b, c;
+        cin >> a >> b >> c;
+        if (a == b)
         {
-            c = 0;
-            b = false;
+            cout << c << endl;
         }
-        if (s[i] == '-')
+        else
         {
-            c++;
-        }
-        if (c == 2)
-        {
-            v.push_back(c);
-            b = true;
-        }
-        if (c == 1 && s[i] == '.')
-        {
-            v.push_back(c);
-            b = true;
-        }
-        if (c == 0 && s[i] == '.')
-        {
-
-            v.push_back(c);
-            b = true;
+            if (b == c)
+            {
+                cout << a << endl;
+            }
+            else
+            {
+                cout << b << endl;
+            }
         }
     }
-
-    for (int n : v)
-    {
-        cout << n;
-    }
-    cout << endl;
 }

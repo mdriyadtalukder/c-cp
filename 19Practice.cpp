@@ -3,26 +3,30 @@ using namespace std;
 
 int main()
 {
-    int x;
-    cin >> x;
-    while (x--)
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7};
+    int k = 0,j=3;
+
+    while (j--)
     {
-        int a, b, c;
-        cin >> a >> b >> c;
-        if (a == b)
+       for (int i = 0; i < v.size(); i++)
+    {
+        if (i == 0)
         {
-            cout << c << endl;
+            k = v[i];
+            v[i] = v[v.size() - 1];
         }
         else
         {
-            if (b == c)
-            {
-                cout << a << endl;
-            }
-            else
-            {
-                cout << b << endl;
-            }
+            int m = v[i];
+            v[i] = k;
+            k = m;
         }
+    }
+    }
+    
+
+    for (int k : v)
+    {
+        cout << k << endl;
     }
 }

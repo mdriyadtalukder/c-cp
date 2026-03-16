@@ -3,30 +3,33 @@ using namespace std;
 
 int main()
 {
-    vector<int> v = {1, 2, 3, 4, 5, 6, 7};
-    int k = 0,j=3;
 
-    while (j--)
+    int x;
+    cin >> x;
+    while (x--)
     {
-       for (int i = 0; i < v.size(); i++)
-    {
-        if (i == 0)
+        int n, c, c1 = 0;
+        cin >> n >> c;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
         {
-            k = v[i];
-            v[i] = v[v.size() - 1];
+            cin >> v[i];
+        }
+        for (int i = 1; i < n; i++)
+        {
+            if (v[i - 1] > v[i])
+            {
+                c1++;
+            }
+        }
+
+        if (c > c1)
+        {
+            cout << "YES" << endl;
         }
         else
         {
-            int m = v[i];
-            v[i] = k;
-            k = m;
+            cout << "NO" << endl;
         }
-    }
-    }
-    
-
-    for (int k : v)
-    {
-        cout << k << endl;
     }
 }

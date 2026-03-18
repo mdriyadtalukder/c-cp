@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//1 side sorted hy..
 int search(vector<int> &A, int tar)
 {
     int st = 0;

@@ -6,21 +6,13 @@ int main()
     cin >> x;
     while (x--)
     {
-        int n, k, c = 0;
-        cin >> n >> k;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
+        int a, b, c, cn = 0;
+        cin >> a >> b >> c;
+        if (a + b >= 10 || a + c >= 10 || b + c >= 10)
         {
-            cin >> v[i];
+            cn++;
         }
-        for (int i = 0; i < n; i++)
-        {
-            if (v[i] == k)
-            {
-                c++;
-            }
-        }
-        if (c > 0)
+        if (cn > 0)
         {
             cout << "YES" << endl;
         }

@@ -2,17 +2,22 @@
 using namespace std;
 int main()
 {
-    int x;
+    long long x;
     cin >> x;
     while (x--)
     {
-        int a, b, c, cn = 0;
-        cin >> a >> b >> c;
-        if (a + b >= 10 || a + c >= 10 || b + c >= 10)
+        long long n, sum = 0;
+        cin >> n;
+        vector<long long> v(n);
+        for (long long i = 0; i < n; i++)
         {
-            cn++;
+            cin >> v[i];
         }
-        if (cn > 0)
+        for (long long i = 0; i < n; i++)
+        {
+            sum += v[i];
+        }
+        if (sum % 2 != 0)
         {
             cout << "YES" << endl;
         }

@@ -1,14 +1,14 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//eta array  k small sub array te divide kre then sort kre all small sub array and merge kre..
+//eta array  k small sub array te divide kre until single elem hy then sort kre all small sub array and merge kre..
 //TC=O(logn)..every bar n/2 vag hy..so n/2^k=1 ,n=2^k,logn=k
 // divide and conquer..1st e divide krbo boro problm ta k choto choto problem e..then choto problem er ans diye oi boro problem er solution ber krbo..its conquer.
 void merge(vector<int> &arr, int st, int mid, int end)
 {
     vector<int> temp;
     int i = st, j = mid + 1;
-    while (i <= mid && j <= end)
+    while (i <= mid && j <= end) //2 part k merge kora in sort way
     {
         if (arr[i] <= arr[j]) // for decending >=.
         {

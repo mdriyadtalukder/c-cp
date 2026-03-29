@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// buy once and sell once
+// buy once and sell once...price(buy er price) joto kom hbe and max(sell er profit) joto boro hbe..
 int maxProfit(vector<int> &prices)
 {
     int p = prices[0];

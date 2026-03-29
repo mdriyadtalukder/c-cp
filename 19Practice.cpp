@@ -2,28 +2,34 @@
 using namespace std;
 int main()
 {
-    long long x;
+    int x;
     cin >> x;
     while (x--)
     {
-        long long n, sum = 0;
+        int n;
+        bool b = false;
         cin >> n;
-        vector<long long> v(n);
-        for (long long i = 0; i < n; i++)
+        string s, s2;
+        cin >> s >> s2;
+        for (int i = 0; i < n; i++)
         {
-            cin >> v[i];
+            if ((s[i] == 'G' && s2[i] == 'B') || (s[i] == 'B' && s2[i] == 'G') || s[i] == s2[i])
+            {
+                b = false;
+            }
+            else
+            {
+                b = true;
+                break;
+            }
         }
-        for (long long i = 0; i < n; i++)
+        if (b)
         {
-            sum += v[i];
-        }
-        if (sum % 2 != 0)
-        {
-            cout << "YES" << endl;
+            cout << "NO" << endl;
         }
         else
         {
-            cout << "NO" << endl;
+            cout << "YES" << endl;
         }
     }
 }

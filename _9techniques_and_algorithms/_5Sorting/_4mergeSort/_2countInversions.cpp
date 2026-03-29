@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-// eta array  k small sub array te divide kre then sort kre all small sub array and merge kre..
-// TC=O(logn)..every bar n/2 vag hy..so n/2^k=1 ,n=2^k,logn=k
-//  divide and conquer..1st e divide krbo boro problm ta k choto choto problem e..then choto problem er ans diye oi boro problem er solution ber krbo..its conquer.
+// i<j and ar[i]>ar[j],,koto guli pair ei condition mane ta ber kora..
 int merge(vector<int> &arr, int st, int mid, int end)
 {
     vector<int> temp;
@@ -19,7 +17,7 @@ int merge(vector<int> &arr, int st, int mid, int end)
         {
             temp.push_back(arr[j]);
             j++;
-            invCount += (mid - i + 1);
+            invCount += (mid - i + 1); //arr[i] jdi boro hy tahole arr[i] er next sob current arr2[j] er theke boro hbe as all 2 arr are sorted..so sob guli inv hbe.
         }
     }
     while (i <= mid)

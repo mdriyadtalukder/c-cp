@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// Binary Tree using level order (BFS).
+// Binary Tree using level order (BFS)...BFS (Breadth-First Search)→ level-wise
 class Node
 {
 public:

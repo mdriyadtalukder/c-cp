@@ -9,19 +9,55 @@ int main()
         int n;
         bool b = false;
         cin >> n;
-        string s, s2;
-        cin >> s >> s2;
+        string s;
+        cin >> s;
+        stack<char> st;
+        for (auto &l : s)
+        {
+            l = tolower(l);
+        }
+        int m = 0, e = 0, o = 0, w = 0;
         for (int i = 0; i < n; i++)
         {
-            if ((s[i] == 'G' && s2[i] == 'B') || (s[i] == 'B' && s2[i] == 'G') || s[i] == s2[i])
+            if (s[i] == 'm')
             {
-                b = false;
+                m++;
             }
-            else
+            if (s[i] == 'e')
             {
-                b = true;
-                break;
+                e++;
             }
+            if (s[i] == 'o')
+            {
+                o++;
+            }
+            if (s[i] == 'w')
+            {
+                w++;
+            }
+        }
+        if (m > 0 && e > 0 && o > 0 && w > 0)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (!st.empty())
+                {
+                    if ((st.top() == 'm' && (s[i] == 'm' || s[i] == 'e')) || (st.top() == 'e' && (s[i] == 'e' || s[i] == 'o')) || (st.top() == 'o' && (s[i] == 'o' || s[i] == 'w')) || (st.top() == 'w' && (s[i] == 'w')))
+                    {
+                        b = false;
+                    }
+                    else
+                    {
+                        b = true;
+                        break;
+                    }
+                }
+                st.push(s[i]);
+            }
+        }
+        else
+        {
+            b = true;
         }
         if (b)
         {

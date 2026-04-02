@@ -2,26 +2,21 @@
 // p[i]>p[i-1] follow it;
 #include <bits/stdc++.h>
 using namespace std;
-long long abc(vector<int> &nums)
+int maxProfit(vector<int> &prices)
 {
-    long long c = 0, r = 0;
-    for (int i = 0; i < nums.size(); i++)
-    {
 
-        if (nums[i] == 0)
+    int max = 0;
+    for (int i = 1; i < prices.size(); i++)
+    {
+        if (prices[i] > prices[i - 1])
         {
-            c++;
-        }
-        else
-        {
-            r = r + ((c * 2) - 1);
-            c = 0;
+            max += prices[i] - prices[i - 1];
         }
     }
-    return r;
+    return max;
 }
 int main()
 {
-    vector<int> v = {1, 3, 0, 0, 2, 0, 0, 4};
-    cout << abc(v);
+    vector<int> v = {7, 1, 5, 3, 6, 4};
+    cout << maxProfit(v);
 }

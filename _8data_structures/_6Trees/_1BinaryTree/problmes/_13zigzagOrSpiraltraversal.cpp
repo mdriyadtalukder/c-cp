@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// 2 ta stack banabo..left ot right ba 1 no stack e root node dibo then er child 2 n stack e dibo er eder child 1 no e dibo..so on
+// 2 ta stack banabo..left ot right ba 1 no stack e root node dibo then er child 2n stack e dibo er eder child 1 no e dibo..so on
 class Node
 {
 public:

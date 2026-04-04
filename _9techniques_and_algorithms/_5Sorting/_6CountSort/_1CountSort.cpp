@@ -1,7 +1,6 @@
-/*1st e son element e count ber krbo j koita kre ase.
-.like index 0-its means 0 koita ase..so on.
+/*1st e sob element e count ber krbo j koita kre ase.
 .then sob gular prefix sum krbo all index er jnno.
-.then main array er last theke element pic krbo and oi num er prefix sum er index e jbo ..
+.then main array er last theke element pick krbo and oi num er prefix sum er index e jbo ..
 then value 1 kre komabo then oi value er index e push krbo elem ta in main array..*/
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 //logn*n
-// check if allocation is possible
+//4 length er array ase each index is book with number of page..ei pages sob student er modde vag kre dite hbe..contiguous order e
+// check if allocation is possible fo all student
 //sob possible er max er modde min konta..
 bool isValid(vector<int> &arr, int n, int m, int maxAllowedPages)
 {
-
+//all student re mid number porjonto page dite thkbo..mid er soman hole 2nd student e jbo.
+//.last e dekhbo student songkha m er theke boro nki.
     int students = 1;
     int pages = 0;
 
@@ -41,7 +43,7 @@ int allocateBooks(vector<int> &arr, int n, int m)
         sum += arr[i];
     }
 
-    int st = 0, end = sum;
+    int st = 0, end = sum; //min and max book pabe for a any student
     int ans = -1;
 
     while (st <= end)
@@ -51,11 +53,11 @@ int allocateBooks(vector<int> &arr, int n, int m)
         if (isValid(arr, n, m, mid))
         {
             ans = mid;
-            end = mid - 1; // try smaller answer
+            end = mid - 1; // try smaller answer..left side
         }
         else
         {
-            st = mid + 1;
+            st = mid + 1; //valid na hole right part e searching hbe..coz max ta j kon ekta student pabe
         }
     }
 

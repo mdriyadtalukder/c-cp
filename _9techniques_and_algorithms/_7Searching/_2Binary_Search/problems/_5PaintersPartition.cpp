@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//n board deoya ase ..each index er value hbe board er size..m painter deoya ase..m painter sob board k paint krte hbe..
+//1 unit board paint krte 1 unit painter drkr..
 // check if painting is possible within given time
 // sob possible er max er modde min konta..
 

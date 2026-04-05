@@ -1,50 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string convert(string s, int numRows)
-{
-    if (numRows == 1)
-        return s; // ✅ fix
-
-    vector<string> v(numRows);
-    bool b = true;
-    int j = 0;
-    string sl = "";
-
-    for (int i = 0; i < s.size(); i++)
-    {
-        cout << j << endl;
-        v[j].push_back(s[i]);
-        if (j == 0)
-        {
-            b = true;
-        }
-        if (j == numRows - 1)
-        {
-            b = false;
-        }
-
-        if (b == true)
-        {
-            j++;
-        }
-        else
-        {
-            j--;
-        }
-    }
-
-    for (auto l : v)
-    {
-        sl += l;
-    }
-
-    return sl;
-}
-
 int main()
 {
-    string s = "PAYPALISHIRING";
-    int numRows = 4;
-    cout << convert(s, numRows);
+    int x;
+    cin >> x;
+
+    while (x--)
+    {
+        int n;
+        cin >> n;
+        int max = INT_MIN;
+        vector<int> v(n);
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
+
+        while (v.size() > 1)
+        {
+            vector<int> v2;
+
+            for (int j = 0; j < (int)v.size() - 1; j++)
+            {
+                v2.push_back(v[j] ^ v[v.size() - 1]);
+                
+            }
+
+            v = v2;
+        }
+
+        cout << v[0] << endl;
+    }
 }

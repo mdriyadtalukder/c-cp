@@ -23,14 +23,14 @@ int singleNonDuplicate(vector<int> &A)
 
         if (mid % 2 == 0) // even index
         {
-            if (A[mid] == A[mid + 1])
+            if (A[mid] == A[mid + 1]) //right
                 st = mid + 1;
             else
                 end = mid - 1;
         }
         else // odd index
         {
-            if (A[mid] == A[mid - 1])
+            if (A[mid] == A[mid - 1])//right
                 st = mid + 1;
             else
                 end = mid - 1;

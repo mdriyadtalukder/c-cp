@@ -39,3 +39,27 @@ int main()
 
     return 0;
 }
+/*
+ Node* ArrayToBST(vector<int> &arr, int start, int end)
+{
+    if (start > end)
+        return NULL;
+
+    int mid = start + (end - start) / 2;
+
+    // root
+    Node* root = new Node(arr[mid]);
+
+    // left subtree
+    root->left = ArrayToBST(arr, start, mid - 1);
+
+    // right subtree
+    root->right = ArrayToBST(arr, mid + 1, end);
+
+    return root;
+}
+    Node* sortedArrayToBST(vector<int>& nums) {
+        return ArrayToBST(nums, 0, nums.size() - 1);
+
+    }
+*/

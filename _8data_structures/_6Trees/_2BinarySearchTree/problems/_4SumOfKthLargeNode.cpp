@@ -3,12 +3,28 @@
 // same as small kth..just right ta left hbe and left ta right..
 // void kThLargest(Node *root, int &ans, int &K)
 // {
-//     if (!root || k <= 0)
+//     if (!root || K <= 0)
 //         return;
-//     kThLargest(root->right, ans, k);
-//     K--;
-//     if (k == 0)
-//         ans += root->data;
 
-//     kThLargest(root->left, ans, k)
-// };
+//     // Right first (largest first)
+//     kThLargest(root->right, ans, K);
+
+//     K--;
+
+//     if (K == 0)
+//     {
+//         ans = root->data;
+//     }
+
+//     // Left
+//     kThLargest(root->left, ans, K);
+// }
+
+// int kthLargest(Node *root, int k)
+// {
+//     int ans = 0;
+
+//     kThLargest(root, ans, k);
+
+//     return ans;
+// }

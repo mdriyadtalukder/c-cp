@@ -37,21 +37,21 @@ Node *insert(Node *root, int val)
 // Kth smallest using inorder traversal
 void KSum(Node *root, int &sum, int &k)
 {
-    if (!root || k <= 0)
+    if (!root)
         return;
 
-    // Left
+    // Inorder Traversal
     KSum(root->left, sum, k);
 
-    // Root
     k--;
-    if (k == 0)
+    if (k >= 0)
     {
-        sum = root->data;
-        return;
+        sum += root->data;
     }
 
-    // Right
+    if (k < 0)
+        return;
+
     KSum(root->right, sum, k);
 }
 
@@ -70,9 +70,10 @@ int main()
         root = insert(root, x);
     }
 
-    int sum = -1;
+    int sum = 0;
 
     KSum(root, sum, k);
+   // return sum;
 
     cout << sum << endl;
 

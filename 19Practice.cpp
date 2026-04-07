@@ -3,33 +3,40 @@ using namespace std;
 
 int main()
 {
-    int a, b;
-    cin >> a >> b;
-    char ar[a][b];
-    for (int i = 0; i < a; i++)
+    int x;
+    cin >> x;
+    while (x--)
     {
-        for (int j = 0; j < b; j++)
+        int n, k;
+        cin >> n >> k;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
         {
-            cin >> ar[i][j];
+            cin >> v[i];
         }
-    }
-    int c = 0;
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
+        if (n > 1)
         {
-            if (ar[i][j] == 'C' || ar[i][j] == 'M' || ar[i][j] == 'Y')
+            for (int i = 0; i < n; i++)
             {
-                c++;
+                v[i] = k;
+            }
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += v[i];
+            }
+            if ((sum + 1) % 2 == 0)
+            {
+                cout << "NO" << endl;
+            }
+            else
+            {
+                cout << "YES" << endl;
             }
         }
-    }
-    if (c == 0)
-    {
-        cout << "#Black&White" << endl;
-    }
-    else
-    {
-        cout << "#Color" << endl;
+        else
+        {
+            cout << "YES" << endl;
+        }
     }
 }

@@ -1,37 +1,64 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> twoSum(vector<int> &numbers, int target)
+void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
 {
-    int i = 0, j = numbers.size() - 1;
-    while (i < j)
+    vector<int> ans;
+    int j = 0, i = 0;
+    while (i < m && j < n)
     {
-        if (numbers[i] + numbers[j] == target)
+        if (nums1[i] < nums2[j])
         {
-            return {i + 1, j + 1};
-        }
-        if (numbers[i] + numbers[j] < target)
-        {
+            ans.push_back(nums1[i]);
             i++;
         }
         else
         {
-            j--;
+            ans.push_back(nums2[j]);
+            j++;
         }
     }
-    return {};
+    while (i < m)
+    {
+        ans.push_back(nums1[i]);
+        i++;
+    }
+    while (j < n)
+    {
+        ans.push_back(nums2[j]);
+        j++;
+    }
+    for (int i = 0; i < m + n; i++)
+    {
+        nums1[i] = ans[i];
+    }
 }
-
 int main()
 {
-    vector<int> nums1 = {2, 7, 11, 15};
-    int target = 9;
+    int m, n;
+    cin >> m >> n;
 
-    vector<int> nums2 = twoSum(nums1, target);
+    vector<int> nums1(m + n);
+    vector<int> nums2(n);
 
-    for (int x : nums2)
+    // input first array (only m valid elements)
+    for (int i = 0; i < m; i++)
     {
-        cout << x << " ";
+        cin >> nums1[i];
+    }
+
+    // input second array
+    for (int i = 0; i < n; i++)
+    {
+        cin >> nums2[i];
+    }
+
+    merge(nums1, m, nums2, n);
+
+    // output merged array
+    for (int i = 0; i < m + n; i++)
+    {
+        cout << nums1[i] << " ";
     }
 
     return 0;

@@ -2,6 +2,9 @@
 // and right value current node value to previous node value..so on
 // for all right's right->current node value to intmax..and left hbe intmin to current node
 
+// run time input dile and sei input diye sorasori tree create krle O(n^2) time lgbe.
+//..like 1-2-3-4..n1st e 1 then 2 add krte 1 travesal kre thbe..3 add krte 1,2 traversal krte hbe..4 add krte 1,2,3..so on
+
 #include <bits/stdc++.h>
 using namespace std;
 

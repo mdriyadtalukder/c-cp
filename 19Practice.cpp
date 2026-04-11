@@ -1,42 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int x;
     cin >> x;
     while (x--)
     {
-        int n, k;
-        cin >> n >> k;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
+        // 31415
+        string s;
+        cin >> s;
+        int c = 0;
+        for (int i = 0; i < s.size(); i++)
         {
-            cin >> v[i];
-        }
-        if (n > 1)
-        {
-            for (int i = 0; i < n; i++)
+            if ((i == 0 && s[i] == '3') || (i == 1 && s[i] == '1') || (i == 2 && s[i] == '4') || (i == 3 && s[i] == '1') || (i == 4 && s[i] == '5'))
             {
-                v[i] = k;
-            }
-            int sum = 0;
-            for (int i = 0; i < n; i++)
-            {
-                sum += v[i];
-            }
-            if ((sum + 1) % 2 == 0)
-            {
-                cout << "NO" << endl;
+                c++;
             }
             else
             {
-                cout << "YES" << endl;
+                break;
             }
+        }
+        if (c == 5)
+        {
+            cout << s.length() << endl;
         }
         else
         {
-            cout << "YES" << endl;
+            cout << c << endl;
         }
     }
 }

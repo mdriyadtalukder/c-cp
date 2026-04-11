@@ -3,10 +3,10 @@ using namespace std;
 // heap
 int main()
 {
-    // j value gula boro seigula upore thake sequencially..doesnot mttr when it is added.
-    // priority_queue<int, vector<int>, greater<int>> pq; //choto theke boro
+    // priority_queue<int, vector<int>, greater<int>> pq; //choto theke boro..minHeap..choto ta sobar age thakbe
 
-    priority_queue<int> pq; // boo theke choto
+    // j value gula boro seigula upore thake sequencially..doesnot mttr when it is added.
+    priority_queue<int> pq; // boro theke choto..maxheap..boro ta sobar age thakbe
     pq.push(1);             // o(logn)
     pq.push(2);
     pq.emplace(3);

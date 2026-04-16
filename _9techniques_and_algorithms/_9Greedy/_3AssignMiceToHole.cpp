@@ -1,5 +1,5 @@
 // mice er index and hole er index deoya ase..then mice gular hole e jaite min koto time lgbe.
-//.2 tai sort krbo then min gula serially dibo and ans ber krbo..
+//.2 tai sort krbo then mince and hole er substract krbo and er modde max ta dibo..
 
 // int assignHole(vector<int> &M, vector<int> &H)
 // {

@@ -5,7 +5,7 @@ using namespace std;
 
 static bool comp(pair<int, int> a, pair<int, int> b)
 {
-    return a.second < b.second; // sort by end time
+    return a.second < b.second; // sort by end time..jeta boro seta age ashbe..
 }
 
 int maxMeetings(int start[], int end[], int n)

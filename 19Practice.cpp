@@ -3,15 +3,25 @@ using namespace std;
 
 int main()
 {
-    string s, t;
-    cin >> s >> t;
-    int j = 0;
-    for (int i = 0; i < t.size(); i++)
+    int x;
+    cin >> x;
+    while (x--)
     {
-        if (s[j] == t[i])
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
         {
-            j++;
+            cin >> v[i];
         }
+        int max = INT_MIN;
+        for (int i = 0; i < n; i++)
+        {
+            if (max < v[i])
+            {
+                max = v[i];
+            }
+        }
+        cout << max << endl;
     }
-    cout << j+1 << endl;
 }

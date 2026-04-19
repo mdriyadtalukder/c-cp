@@ -3,25 +3,46 @@ using namespace std;
 
 int main()
 {
-    int x;
-    cin >> x;
-    while (x--)
+    int tc;
+    cin >> tc;
+
+    while (tc--)
     {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
+        int n, k;
+        cin >> n >> k;
+
+        for (int i = 0; i < k; i++)
         {
-            cin >> v[i];
+            int x;
+            cin >> x;
         }
-        int max = INT_MIN;
+
+        vector<pair<int, int>> v(n);
+
         for (int i = 0; i < n; i++)
         {
-            if (max < v[i])
+            int l;
+            cin >> l;
+            v[i] = {l, i};
+        }
+
+        sort(v.rbegin(), v.rend());
+
+        vector<int> ops;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (; v[i].first < k + 1; v[i].first++)
             {
-                max = v[i];
+                ops.push_back(v[i].second);
             }
         }
-        cout << max << endl;
+
+        cout << ops.size() << "\n";
+
+        for (auto &x : ops)
+            cout << x + 1 << " ";
+
+        cout << "\n";
     }
 }

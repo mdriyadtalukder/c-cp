@@ -1,48 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+bool isDouble(string s)
+{
+    for (int i = 1; i < s.size(); i++)
+    {
+        if (s[i] == s[i - 1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
 int main()
 {
-    int tc;
-    cin >> tc;
+    int x;
+    cin >> x;
 
-    while (tc--)
+    while (x--)
     {
-        int n, k;
-        cin >> n >> k;
-
-        for (int i = 0; i < k; i++)
+        string s;
+        cin >> s;
+        string sl = s, sl2 = s, sl3 = s;
+        int k = 0, k2 = 0;
+        for (int i = 1; i < s.size(); i++)
         {
-            int x;
-            cin >> x;
-        }
-
-        vector<pair<int, int>> v(n);
-
-        for (int i = 0; i < n; i++)
-        {
-            int l;
-            cin >> l;
-            v[i] = {l, i};
-        }
-
-        sort(v.rbegin(), v.rend());
-
-        vector<int> ops;
-
-        for (int i = 0; i < n; i++)
-        {
-            for (; v[i].first < k + 1; v[i].first++)
+            if (sl[i] == sl[i - 1])
             {
-                ops.push_back(v[i].second);
+                k = i;
             }
         }
-
-        cout << ops.size() << "\n";
-
-        for (auto &x : ops)
-            cout << x + 1 << " ";
-
-        cout << "\n";
+        reverse(sl.begin() + k, sl.end());
+        for (int i = 1; i < s.size(); i++)
+        {
+            if (sl2[i] == sl2[i - 1])
+            {
+                k2 = i - 1;
+            }
+        }
+        int temp = sl2[k], temp2 = sl2[k + 1];
+        sl2[k] = temp2;
+        sl2[k + 1] = temp;
+        if (sl3[k] == 'b')
+        {
+            sl3[k] = 'a';
+        }
+        else
+        {
+            sl3[k] = 'b';
+        }
+        if (isDouble(sl) || isDouble(sl2) || isDouble(sl3))
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
     }
 }

@@ -3,11 +3,14 @@
 // negative circle er shortest path ber kra impossible..negative circle means all weight er sum negative songkha hbe
 // step-1: initially sob node er dist value infinite thkbe..just 0 er 0 hbe..  0---3(weight)--->2...dis[u]+w<dist[v]--dist[0]+3<dist[2]..condition mille update hbe..mane 2 no index dist[0]+3 value ta hbe..v-1 bar ei loop cholbe and value updtae hbe--edges relax koranor formolla
 // step-2:  v-1.after that r ekbar loop chalabo mane edges relax korabo jdi eibr value update hy tahole eita negative circle ase..so shortest path ber kra jbe na..otherwise we got shortest path
-
-// time complexity:
+//better for sparse
+// time complexity:--for sparse
 // Worst case: V*E
 // Best case: E
 // Space:V
+//for dense--
+//TC=V^2E
+//TC=O(V4)--with multilpe sourse
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> bellmanFord(int V, vector<vector<int>> &edges, int S)

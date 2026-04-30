@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// n ke kon kon i dara vag jai
 int main()
 {
     int n;
@@ -40,3 +40,30 @@ int main()
 
     cout << ct << " " << sum << endl;
 }
+
+/* Sieve version--faster
+tc=(nlogn)
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N = 1e5 + 10;
+vector<int> divisors[N];
+
+int main() {
+
+    // Precompute divisors
+    for (int i = 1; i < N; ++i) {
+        for (int j = i; j < N; j += i) {
+            divisors[j].push_back(i);
+        }
+    }
+
+    // Print divisors for numbers 1 to 9
+    for (int i = 1; i < 10; ++i) {
+        for (int div : divisors[i]) {
+            cout << div << " ";
+        }
+        cout << "\n";
+    }
+}
+*/

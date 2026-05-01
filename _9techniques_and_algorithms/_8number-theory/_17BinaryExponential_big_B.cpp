@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//Euler totient function
 const int M = 1e9 + 7;
 
 int binExp(int a, long long b, int m)

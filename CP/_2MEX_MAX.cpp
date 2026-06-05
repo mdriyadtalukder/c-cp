@@ -38,7 +38,7 @@ int main()
         // tai frequency ekta komiye dilam
         mp[maxi]--;
 
-        vector<int> res;
+        vector<int> res; //rearrange vector
 
         // maximum value first e rakhlam
         // jate sob prefix er max same thake
@@ -49,7 +49,7 @@ int main()
         // 0,1,2,3... jotodin ase
         // totodin sequence e add korbo
         // karon ete mex fastest barbe
-        while (mp[mexi] > 0)
+        while (mp[mexi] > 0) 
         {
             res.push_back(mexi);
 

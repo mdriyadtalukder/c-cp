@@ -1,30 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
-//TC=O(n*2^n);
-void allSets(vector<int> &v, vector<int> &ans, int i, vector<vector<int>> &allsubs)
+// TC=O(n*2^n); --n size array and tree
+
+void getAllSubsets(vector<int> &nums, vector<int> &ans, int i, vector<vector<int>> &allSubsets)
 {
-    // allsubs.push_back({ans}); [[1],[1,2],[1,2,3]....]
-    if (i == v.size())
+    if (i == nums.size())
     {
-
-        for (int i : ans)
-        {
-            cout << i << " ";
-        }
-        cout << endl;
-        return; //backtrack
+        allSubsets.push_back(ans);
+        return;
     }
-    // inclution--tick
-    ans.push_back(v[i]);
-    allSets(v, ans, i + 1, allsubs);
 
-    ans.pop_back(); // backtracking
-    allSets(v, ans, i + 1, allsubs); //exclution--cross
-    // return allsubs;
+    // include current element
+    ans.push_back(nums[i]);
+    getAllSubsets(nums, ans, i + 1, allSubsets);
+
+    // backtrack (remove last element)
+    ans.pop_back();
+
+    // exclude current element
+    getAllSubsets(nums, ans, i + 1, allSubsets);
 }
+
+vector<vector<int>> subsets(vector<int> &nums)
+{
+    vector<vector<int>> allSubsets;
+    vector<int> ans;
+
+    getAllSubsets(nums, ans, 0, allSubsets);
+
+    return allSubsets;
+}
+
 int main()
 {
-    vector<int> v = {1, 2, 3}, a;
-    vector<vector<int>> allsub;
-    allSets(v, a, 0, allsub);
+    vector<int> nums = {1, 2, 3};
+
+    vector<vector<int>> result = subsets(nums);
+
+    for (auto &subset : result)
+    {
+        cout << "[ ";
+        for (int x : subset)
+        {
+            cout << x << " ";
+        }
+        cout << "]\n";
+    }
+
+    return 0;
 }

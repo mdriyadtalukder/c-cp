@@ -4,15 +4,14 @@ using namespace std;
 // 1-4 number prblm er TC=SC=O(n^2)
 //  Adjacency matrix
 //  undirected unweighted graph
-//remove e TC=O(1)..just r and c dibo then or value zero kre dibo..like ad[r][c]=0 and ad[c][r]=0..this way
-
+// remove e TC=O(1)..just r and c dibo then or value zero kre dibo..like ad[r][c]=0 and ad[c][r]=0..this way
 
 int main()
 {
     int vertex, edges; // node and row
     cin >> vertex >> edges;
 
-    vector<vector<bool>> AdjMat(vertex, vector<bool>(vertex, 0));
+    vector<vector<bool>> AdjMat(vertex, vector<bool>(vertex, 0)); // vector<bool>(vertex, 0)-all value will be 0(array er elem er vitor 0)..and vector<bool>(vertex, 0) means Create a vector of size vertex and fill all values with 0 (false)--array er elem er vitor array--2d.
 
     int u, v; // u=row and v=column
     for (int i = 0; i < edges; i++)

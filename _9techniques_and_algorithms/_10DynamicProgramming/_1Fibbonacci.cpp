@@ -1,7 +1,7 @@
 // 0 1 1 2 3...pre 2 tar jog foll..er jnno ekt arrray create krbo jate sob value oitai store thke..recreate na krte hy..eitai DP.
 #include <bits/stdc++.h>
 using namespace std;
-// top down--recursion with from top elem to dowm
+// top down--recursion with from top elem to dowm--recursion+cache
 int fibon(int n, vector<int> &dp)
 {
     // base case
@@ -20,7 +20,7 @@ int fib(int n)
     vector<int> dp(n + 1, -1);
     return fibon(n, dp);
 
-    // bottom up--loop--from bottom elem to up
+    // bottom up--loop--from bottom elem to up---build ans from smallest value
     // if (n <= 1)
     //     return n;
     // vector<int> dp(n + 1, -1);
@@ -32,7 +32,7 @@ int fib(int n)
     // }
     // return dp[n];
 
-    /* speace optimization solution
+    /* speace optimization solution--when only pre state are needed
     if(n <= 1)
     return n;
     int curr prev = 1, prev2 = 0;

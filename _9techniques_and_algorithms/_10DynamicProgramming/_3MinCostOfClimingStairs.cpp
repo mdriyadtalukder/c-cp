@@ -6,7 +6,7 @@ using namespace std;
 // top down--recursion with from top elem to dowm
 int ways(int n, vector<int> &cost, vector<int> &dp)
 {
-    if (n <= 1)
+    if (n <= 1) //0 or 1 no siri theke suru krte pari as 1 or 2 jump.. tai ja initial state...tai  hbe.. or leaft node 1 or 0 hy..
         return 0;
 
     if (dp[n] != -1)

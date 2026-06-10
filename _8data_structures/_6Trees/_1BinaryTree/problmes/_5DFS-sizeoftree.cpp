@@ -43,6 +43,7 @@ void Preorder(Node *root, int &c)
 
     Preorder(root->left, c);
     Preorder(root->right, c);
+    //recursion version
     // return 1+ Preorder(root->left)+ Preorder(root->right)--for that fun will be int--for count
     // return root->data+ Preorder(root->left)+ Preorder(root->right)--for that fun will be int--for sum
 }

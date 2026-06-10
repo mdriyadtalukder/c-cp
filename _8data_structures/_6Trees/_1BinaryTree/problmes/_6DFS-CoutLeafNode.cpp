@@ -47,14 +47,19 @@ void Preorder(Node *root, int &c)
     Preorder(root->left, c);
     Preorder(root->right, c);
 
-    // recursion
+} 
+//recurson version
+// int countLeaf(Node* root)
+// {
+//     if (root == NULL)
+//         return 0;
 
-    // if (!root->left && !root->right)
+//     if (!root->left && !root->right)
+//         return 1;
 
-    //     return 1;
-    // return Preorder(root->left) + Preorder(root->right);
-}
-
+//     return countLeaf(root->left) +
+//            countLeaf(root->right);
+// }
 int main()
 {
     cout << "Enter root node: ";

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//jader child ase
 class Node
 {
 public:

@@ -11,8 +11,8 @@ int Robber(int index, vector<int> &nums, vector<int> &dp)
     if (index == 0)
         return nums[0];
 
-    if (index < 0)
-        return 0;
+    if (index ==1)
+        return max(nums[0], nums[1]);//2 ta thkle jeta boro oita return krbo
 
     if (dp[index] != -1)
         return dp[index];
@@ -33,7 +33,6 @@ int rob(vector<int> &nums)
     int rob(vector<int>& nums)
 {
     int n = nums.size();
-
     if (n == 1)
         return nums[0];
 
@@ -41,7 +40,7 @@ int rob(vector<int> &nums)
         return max(nums[0], nums[1]);
 
     vector<int> dp(n, -1);
-
+//1st e base case likte hy in bottom up
     dp[0] = nums[0];
     dp[1] = max(nums[0], nums[1]);
 

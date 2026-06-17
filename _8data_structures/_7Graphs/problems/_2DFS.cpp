@@ -44,10 +44,10 @@ vector<int> dfsOfGraph(int V, vector<int> adj[])
         if (!visited[node])
         {
             visited[node] = 1;
-            ans.push_back(node);
+            ans.push_back(node); // 1st push 0
 
             // push neighbors (reverse for same order as recursion)
-            for (int j = adj[node].size() - 1; j >= 0; j--)
+            for (int j = adj[node].size() - 1; j >= 0; j--) // reverse coz--Because stack is LIFO (Last In First Out).
             {
                 if (!visited[adj[node][j]])
                 {
@@ -59,3 +59,21 @@ vector<int> dfsOfGraph(int V, vector<int> adj[])
 
     return ans;
 }
+/*
+
+stack version
+      0
+     / \
+    1   2
+   / \
+  3   4
+
+adj[0] = {1, 2} ---stack reverse kore dibe(Because stack is LIFO (Last In First Out)) like 2,1 then 1 pick hbe
+adj[1] = {0, 3, 4}--reverse krbe like 4,3..so pic 3,4 then back giye 2..so 0,1,3,4,2
+adj[2] = {0}
+adj[3] = {1}
+adj[4] = {1}
+
+DFS-0 → 1 → 3 → 4 → 2
+
+*/

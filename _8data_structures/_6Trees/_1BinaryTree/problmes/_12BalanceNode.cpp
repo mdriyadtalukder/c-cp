@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// every node er khetre -1<=leftHeight-rightHeight<=1 hote hbe..
+// every node er khetre -1<=leftHeight-rightHeight<=1 hote hbe.. left and right node er height different hote hbe 0 or 1..
 class Node
 {
 public:

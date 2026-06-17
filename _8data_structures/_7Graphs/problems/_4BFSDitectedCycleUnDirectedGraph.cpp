@@ -1,4 +1,4 @@
-// TC=O(v+e)..SC=O(v)
+// TC=O(v+e)..SC=O(v)--same as dfs..just queue use krbo..r sob same
 #include <bits/stdc++.h>
 using namespace std;
 bool BFS(int vertex, vector<int> adj[], vector<bool> &visited)

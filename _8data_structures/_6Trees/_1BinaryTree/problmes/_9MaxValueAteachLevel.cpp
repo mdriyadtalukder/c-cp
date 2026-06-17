@@ -20,7 +20,7 @@
 
 //             maxi = max(maxi, temp->data);
 
-//             if (temp->left)
+//             if (temp->left) //size wont update coz size is fixed value
 //                 q.push(temp->left);
 
 //             if (temp->right)

@@ -1,4 +1,4 @@
-// ekta node jdi 1 er besi visisted hy taile oitai cycle ase..ekadin node er child same ase nki
+// ekta node jdi 1 er besi visisted hy and oita parent na hy taile oitai cycle ase..ekadin node er child same ase nki
 // TC=O(v+e)..SC=O(v)
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,10 +8,10 @@ bool CycleDetect(int node, int parent, vector<int> adj[], vector<bool> &visited)
 
     for (int j = 0; j < adj[node].size(); j++)
     {
-        if (adj[node][j] == parent)
+        if (adj[node][j] == parent) //
             continue;
 
-        if (visited[adj[node][j]])
+        if (visited[adj[node][j]]) 
             return 1;
 
         if (CycleDetect(adj[node][j], node, adj, visited))

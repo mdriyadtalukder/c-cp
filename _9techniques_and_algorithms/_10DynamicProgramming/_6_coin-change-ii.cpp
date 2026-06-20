@@ -11,28 +11,21 @@ Explanation: there are four ways to make up the amount: // ager tar motoi just t
 5=2+1+1+1
 5=1+1+1+1+1
 
-tree er end e 0 je koita hbe oi koita combination hbe..
 
 We use ind + 2D DP because:
 👉 “We must track both which coins are allowed and what amount is left.”
 
-ind means which coins allow to use
-ind = 0 → you can use [1, 2, 5]
-ind = 1 → you can use [2, 5]
-ind = 2 → you can use [5]
+ind = 0 → [1]
+ind = 1 → [1,2]
+ind = 2 → [1,2,5]
 
-Case A: ind = 0 → allowed [1,2,5]
-We can build:(for make 5)
-1+1+1+1+1
-2+1+1+1
-2+2+1
-5
-Case B: ind=1->allowed(2,5)
-We can build:(for make 5)
-5
-Case C: ind=2->allowed(5)
-We can build:(for make 5)
-5
+🧠 Example (if coins = [1,2,5], amount = 5)
+
+          0   1   2   3   4   5
+        -------------------------
+1       | -1  -1  -1  -1  -1  -1
+2       | -1  -1  -1  -1  -1  -1
+5       | -1  -1  -1  -1  -1  -1
 */
 
 int func1(int ind, int amount, vector<int> &coins, vector<vector<int>> &dp)

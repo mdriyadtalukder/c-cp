@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// every level er 1st left side er value nibe..same concept as right side
+// every level er 1st left side er value nibe or every level er 1st value..same concept as right side
 // 1-15 all O(n)
 class Node
 {

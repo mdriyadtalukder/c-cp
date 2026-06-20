@@ -5,8 +5,10 @@ using namespace std;
 int fibon(int n, vector<int> &dp)
 {
     // base case
-    if (n <= 1)
+    if (n == 0 || n == 1)
+    {
         return n;
+    }
 
     // already calculated result
     if (dp[n] != -1)
@@ -21,8 +23,9 @@ int fib(int n)
     return fibon(n, dp);
 
     // bottom up--loop--from bottom elem to up---build ans from smallest value
-    // if (n <= 1)
+    // if (n == 0 || n == 1)
     //     return n;
+
     // vector<int> dp(n + 1, -1);
     // dp[0] = 0;
     // dp[1] = 1; // can't access it
@@ -33,9 +36,9 @@ int fib(int n)
     // return dp[n];
 
     /* speace optimization solution--when only pre state are needed
-    if(n <= 1)
+    if (n == 0 || n == 1)
     return n;
-    int curr prev = 1, prev2 = 0;
+    int curr. prev = 1, prev2 = 0;
     for(int i = 2 i<=n;i++)
     {
     curr = prev+prev2;

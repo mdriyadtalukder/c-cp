@@ -7,7 +7,7 @@ vector<int> topoSort(int V, vector<int> adj[])
     vector<int> ans;
     vector<int> InDeg(V, 0);
 
-    // store the indegree
+    // store the indegree--means koita child age each node er seta ber krbo
     for (int i = 0; i < V; i++)
     {
         for (int j = 0; j < adj[i].size(); j++)

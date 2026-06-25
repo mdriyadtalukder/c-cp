@@ -1,5 +1,6 @@
-// graph er node k 2 ta grp e vag krbo..emn vabe jate grp er elements adjecency na hy eke oporer..
+// graph er node k 2 ta grp e vag krbo..emn vabe jate grp er elements adjecency(connected na thke) na hy eke oporer..
 // odd length er circle hole bipartite grp hbena
+// red then blue eivabe color dite thkbo..j color thkbe tar neighbor bipodid color er thkbe..ekta ekta node er jbo and er size ba er childs gular color assign krbo or check krbo j soman nki
 #include <bits/stdc++.h>
 using namespace std;
 bool isBipartite(int V, vector<int> adj[])
@@ -31,7 +32,7 @@ bool isBipartite(int V, vector<int> adj[])
                     // color already assigned
                     else
                     {
-                        if (color[node] == color[adj[node][j]])
+                        if (color[node] == color[adj[node][j]]) // color[node] parent r er neighbors/child color[adj[node][j]] soman hote parbe na
                         {
                             return 0;
                         }

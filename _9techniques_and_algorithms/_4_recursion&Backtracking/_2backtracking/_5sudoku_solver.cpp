@@ -41,22 +41,22 @@ bool helper(vector<vector<char>> &board, int row, int col)
     int nextRow = row;
     int nextCol = col + 1;
 
-    if (nextCol == 9)
+    if (nextCol == 9) //column last obdi gele kono row er then next row te column jbe and column abr 0 theke suru hbe
     {
         nextRow = row + 1;
         nextCol = 0;
     }
 
     if (board[row][col] != '.')
-        return helper(board, nextRow, nextCol);
+        return helper(board, nextRow, nextCol); //kono value exist krle next sell e jbolike 0,0 to 0,1 cell
 
-    for (char dig = '1'; dig <= '9'; dig++)
+    for (char dig = '1'; dig <= '9'; dig++) //jdi . thke value exist na kre..
     {
-        if (isSafe(board, row, col, dig))
+        if (isSafe(board, row, col, dig)) //check rkbo value ta safe nki boshanor jnno
         {
             board[row][col] = dig;
 
-            if (helper(board, nextRow, nextCol))
+            if (helper(board, nextRow, nextCol)) //next cell e jbo safe hole
                 return true;
 
             board[row][col] = '.';

@@ -67,10 +67,10 @@ void gameOfLife(vector<vector<int>> &board)
 
             if (temp[i][j] == 1)
             {
-                if (live < 2 || live > 3)
-                    board[i][j] = 0;
-                else
+                if (live == 2 || live == 3)
                     board[i][j] = 1;
+                else
+                    board[i][j] = 0;
             }
             else
             {

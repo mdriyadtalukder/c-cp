@@ -1,4 +1,5 @@
-// node er neighbor jdi visited thke but seita node tir parent na hy tahole it is a cycle.
+// root node theke sora -> sudu jete thkbo..and curr er path er value 1 dite thkbo in path vector and visited 1 hbe..jkhn back krbo tokhn abr just oi curr path er value 0 kre dibo..
+//jdi current path e ekta node 2 bar pai taile oita cycle
 #include <bits/stdc++.h>
 using namespace std;
 bool DetectCycle(int node, vector<int> adj[], vector<bool> &visited, vector<bool> &path)

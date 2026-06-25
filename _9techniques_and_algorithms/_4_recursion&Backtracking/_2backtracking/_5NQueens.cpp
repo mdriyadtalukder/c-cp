@@ -57,7 +57,7 @@ void nQueens(vector<vector<string>> &res, int n, vector<string> &v, int k)
         {
             v[k][i] = 'Q';
             nQueens(res, n, v, k + 1);
-            v[k][i] = '.';
+            v[k][i] = '.'; //possible confugerations dekhar por current q ke . diye oita abr next cell theke check krbo for possible confugaration
         }
     }
 }

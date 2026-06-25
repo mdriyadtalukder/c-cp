@@ -21,8 +21,8 @@ int main()
     // suffix
     for (int i = n - 2; i >= 0; i--)
     {
-        suffix *= nums[i + 1]; // ith suffix
-        ans[i] *= suffix;
+        suffix =suffix* nums[i + 1]; // ith suffix
+        ans[i] =ans[i]* suffix;
     }
 
     // print result

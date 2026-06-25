@@ -1,0 +1,5 @@
+//best product to buy i & ii both..
+//product of array except self..***
+//nums of zero filled subarray
+//increasing tripple subsequense **
+//first missing possitive num ***

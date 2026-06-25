@@ -18,15 +18,13 @@ long long maximumSubarraySum(vector<int> &nums, int k)
 
     for (int i = k; i < nums.size(); i++)
     {
-        freq[nums[i]]++;
-        windowSum += nums[i];
+        freq[nums[i]]++;                    // add new element into window
+        if (--freq[nums[i - k]] == 0) // remove old element frequency
+            freq.erase(nums[i - k]);  // if count becomes 0, erase from map
+        windowSum += nums[i] - nums[i - k]; // add new, remove old from sum
 
-        int outVal = nums[i - k]; // minus krbe sei value
-        if (--freq[outVal] == 0)  // eita jdi 1 tai thke tahole remove krbe from freq
-            freq.erase(outVal);
-        windowSum -= outVal;
 
-        if (freq.size() == k)
+        if (freq.size() == k) // means all k elements are distinct
             maxSum = max(maxSum, windowSum);
     }
 

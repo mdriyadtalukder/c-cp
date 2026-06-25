@@ -1,24 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-//row k column banao o column k row
+
+//with extra space
 int main() {
     vector<vector<int>> ar = {
         {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
+        {4, 5, 6}
     };
 
-    vector<vector<int>> arr(3, vector<int>(3));
+    int r = ar.size();
+    int c = ar[0].size();
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            arr[j][i] = ar[i][j];
+    vector<vector<int>> ans(c, vector<int>(r));
+
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            ans[j][i] = ar[i][j];
         }
     }
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << arr[i][j] << " ";
+    // print transpose matrix
+    for (int i = 0; i < ans.size(); i++) {
+        for (int j = 0; j < ans[0].size(); j++) {
+            cout << ans[i][j] << " ";
         }
         cout << endl;
     }

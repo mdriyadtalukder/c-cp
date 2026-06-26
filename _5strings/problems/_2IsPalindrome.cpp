@@ -5,7 +5,7 @@ bool isPalindrome(string s)
     string a, b;
     for (auto i : s)
     {
-        if ((i >= 'a' && i <= 'z') || i >= 'A' && i <= 'Z' || isdigit(i))
+        if ((i >= 'a' && i <= 'z') || i >= 'A' && i <= 'Z' || isdigit(i)) //isalnum(i)-> both checking
         {
             a.push_back(tolower(i));
         }

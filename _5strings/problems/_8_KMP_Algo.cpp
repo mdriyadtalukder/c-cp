@@ -1,7 +1,7 @@
 // Knuth-Morris-Pratt (KMP) String Matching Algorithm
-//  7 no prblm er motoi..just count kre koi jaigai match krse s ta in t..
+//  7 no prblm er motoi.
 //  ete TC hbe O(S+T)
-// KMP bes than rabin karp
+// KMP best than rabin karp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -70,29 +70,3 @@ int main()
 
     return 0;
 }
-
-/* give index...same as 7
-vector<int> indices;
-
-while (i < t.size())
-{
-    if (t[i] == s[j])
-    {
-        i++;
-        j++;
-    }
-    else
-    {
-        if (j != 0)
-            j = pi[j - 1];
-        else
-            i++;
-    }
-
-    if (j == s.size())
-    {
-        indices.push_back(i - s.size()); // 👈 index stored
-        j = pi[j - 1]; // continue searching
-    }
-}
-*/

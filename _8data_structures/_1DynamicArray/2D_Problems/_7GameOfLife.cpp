@@ -1,6 +1,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+// cell 0 hole and row col and diagonal total 8 ta er modde 3 ta 1 thkle oi cell 1 hoye jbe na hy 0 hbe..r cell ta 1 hole and and row col and diagonal total 8 ta er modde 2 ba 3 ta 1 hole cell ta 1 hbe na hy 0 hbe
 int countLive(vector<vector<int>> &v, int row, int col, int n, int m)
 {
     int live = 0;

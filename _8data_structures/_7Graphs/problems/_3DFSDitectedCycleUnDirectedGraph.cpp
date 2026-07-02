@@ -76,3 +76,6 @@ bool cycleDFS(int node, int parent, vector<bool> & visited, vector<vector<int>>&
 
         return 0;
     }*/
+
+
+    //bool isCycle(int V, vector<int> adj[])

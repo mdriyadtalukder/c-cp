@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// 7 hoyte koto highest window er length
+
 int main()
 {
     int arr[] = {2, 1, 5, 2, 8};
@@ -15,16 +15,13 @@ int main()
     {
         sum += arr[i];
 
-        if (sum > target)
+        while (sum > target)
         {
             sum -= arr[j];
             j++;
         }
 
-        if (i - j + 1 > maxLength)
-        {
-            maxLength = i - j + 1;
-        }
+        maxLength = max(maxLength, i - j + 1);
     }
 
     cout << maxLength << endl;

@@ -1,3 +1,5 @@
+
+//src to destination er shortest path..0-5 er shortest path
 // dijkstra er motoi just jokhn node er value set krbo with previous weighted sum tokhn tar parents k just parents array te array krbo
 // initially parents array er value thkbe -1
 // jar parent sei no index e tar parent value rakhbe..0 er parent -1.
@@ -51,26 +53,27 @@ vector<int> shortestPath(int V, int m, vector<vector<int>> &edges)
             {
                 dist[neighbour] = dist[node] + weight;
                 p.push({dist[neighbour], neighbour});
-                parent[neighbour] = node;
+                parent[neighbour] = node; //current node er parent storing
             }
         }
     }
 
     vector<int> path;
-    if (parent[V] == -1)
+    if (parent[V] == -1) //if i cant reach mu destination
     {
         path.push_back(-1);
         return path;
     }
     int dest = V;
-
+//i can reach
     while (dest != -1)
     {
         path.push_back(dest);
         dest = parent[dest];
     }
-    path.push_back(dist[V]);
+    path.push_back(dist[V]); //0 to des er weight ja 1st a hbe tai reverse krlm
     reverse(path.begin(), path.end());
 
     return path;
 }
+//vector<int> shortestPath(int V, int m, vector<vector<int>> &edges)

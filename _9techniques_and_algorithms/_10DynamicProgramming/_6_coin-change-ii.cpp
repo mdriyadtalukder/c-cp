@@ -1,6 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+int func1(int ind, int amount, vector<int> &coins, vector<vector<int>> &dp)
+{
+    if (amount == 0)
+        return 1;
+    if (ind < 0)
+        return 0;
+    if (dp[ind][amount] != -1)
+        return dp[ind][amount];
+
+    int ways = 0;
+    for (int coin_amount = 0; coin_amount <= amount; coin_amount += coins[ind])
+    {
+        ways += func1(ind - 1, amount - coin_amount, coins, dp);
+    }
+
+    return dp[ind][amount] = ways;
+}
+
+int change(int amount, vector<int> &coins)
+{
+    vector<vector<int>> dp(coins.size(), vector<int>(amount + 1, -1));
+    return func1(coins.size() - 1, amount, coins, dp);
+}
+//int change(int amount, vector<int> &coins)
 /*
 
 Input: amount = 5, coins = [1,2,5]
@@ -27,27 +52,3 @@ ind = 2 → [1,2,5]
 2       | -1  -1  -1  -1  -1  -1
 5       | -1  -1  -1  -1  -1  -1
 */
-
-int func1(int ind, int amount, vector<int> &coins, vector<vector<int>> &dp)
-{
-    if (amount == 0)
-        return 1;
-    if (ind < 0)
-        return 0;
-    if (dp[ind][amount] != -1)
-        return dp[ind][amount];
-
-    int ways = 0;
-    for (int coin_amount = 0; coin_amount <= amount; coin_amount += coins[ind])
-    {
-        ways += func1(ind - 1, amount - coin_amount, coins, dp);
-    }
-
-    return dp[ind][amount] = ways;
-}
-
-int change(int amount, vector<int> &coins)
-{
-    vector<vector<int>> dp(coins.size(), vector<int>(amount + 1, -1));
-    return func1(coins.size() - 1, amount, coins, dp);
-}

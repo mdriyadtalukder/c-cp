@@ -1,11 +1,4 @@
-// n=5 so nich theke 5th siri te uthte hbe..er jnno zero theke suru krbo..er jnno amra 1 step ba 2 step kre jete parbo in 5 no siri..
-// like 1,1,1,1,1 or 2,2,1 or 2,1,1,1...emn kre koita possible result hbe eita ber krte hbe..
-// tree banabo 0 hbe node then 1 step and 2 step will be left and right child then 1 er chil abr hbe 1step(1+1=2) and 2step(1+2=3)..so on until get 5 or 6..
-// last e dekhbo kota possible(5) leap node hy..leaf node n or n er cheye boro value thkbe just
-// amr bujar khetre node concept use krtese for describing
-// last nodes 5 or 6 hbe..5 hole r check krbona
 
-// uporer ta recursion silo..top down e every step er value store kre rakhbo..
 #include <bits/stdc++.h>
 using namespace std;
 // top down--recursion with from top elem to dowm
@@ -48,3 +41,13 @@ int climbStairs(int n)
 
         */
 }
+
+// n=5 so nich theke 5th siri te uthte hbe..er jnno zero theke suru krbo..er jnno amra 1 step ba 2 step kre jete parbo in 5 no siri..
+// like 1,1,1,1,1 or 2,2,1 or 2,1,1,1...emn kre koita possible result hbe eita ber krte hbe..
+// tree banabo 0 hbe node then 1 step and 2 step will be left and right child then 1 er chil abr hbe 1step(1+1=2) and 2step(1+2=3)..so on until get 5 or 6..
+// last e dekhbo kota possible(5) leap node hy..leaf node n or n er cheye boro value thkbe just
+// amr bujar khetre node concept use krtese for describing
+// last nodes 5 or 6 hbe..5 hole r check krbona
+
+// uporer ta recursion silo..top down e every step er value store kre rakhbo..
+//int climbStairs(int n)

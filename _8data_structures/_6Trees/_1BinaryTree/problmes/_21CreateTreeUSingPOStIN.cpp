@@ -3,12 +3,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node {
+struct Node
+{
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int val) {
+    Node(int val)
+    {
         data = val;
         left = right = NULL;
     }
@@ -26,13 +28,13 @@ int Find(int in[], int target, int start, int end)
 }
 
 // Build tree using postorder + inorder
-Node* Tree(int in[], int post[], int InStart, int InEnd, int index)
+Node *Tree(int in[], int post[], int InStart, int InEnd, int index)
 {
     if (InStart > InEnd)
         return NULL;
 
     // root from postorder
-    Node* root = new Node(post[index]);
+    Node *root = new Node(post[index]);
 
     int pos = Find(in, post[index], InStart, InEnd);
 
@@ -47,9 +49,10 @@ Node* Tree(int in[], int post[], int InStart, int InEnd, int index)
 }
 
 // Print inorder to verify
-void printInorder(Node* root)
+void printInorder(Node *root)
 {
-    if (!root) return;
+    if (!root)
+        return;
     printInorder(root->left);
     cout << root->data << " ";
     printInorder(root->right);
@@ -57,15 +60,22 @@ void printInorder(Node* root)
 
 int main()
 {
-    int in[]   = {4, 2, 5, 1, 6, 3};
+    int in[] = {4, 2, 5, 1, 6, 3};
     int post[] = {4, 5, 2, 6, 3, 1};
 
     int n = 6;
 
-    Node* root = Tree(in, post, 0, n - 1, n - 1);
+    Node *root = Tree(in, post, 0, n - 1, n - 1);
 
     cout << "Inorder of constructed tree: ";
     printInorder(root);
 
     return 0;
 }
+
+/*
+int main()
+{
+    int in[]   = {4, 2, 5, 1, 6, 3};
+    int post[] = {4, 5, 2, 6, 3, 1};
+*/

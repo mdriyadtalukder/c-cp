@@ -1,8 +1,4 @@
-// house ase..tar vitorer value holo tar vitorer taka..ami j kono ghore churi krte pari
-// but jdi adjancy(pasher ta) house e churi kri tahole alarm vajbe o police ashbe
-// max koto tk churi krte parbo from all possible solution
-//[1,2,3.4]--4 no ghor theke tk churi krle kon kon ghore churi krte parbo next r jdi na churi kri then kon kon ghore churi krte parbo next
-// eivbe tree banabo for all.
+
 #include <bits/stdc++.h>
 using namespace std;
 // top down--recursion with from top elem to dowm
@@ -77,3 +73,11 @@ int rob(vector<int> &nums)
         return prev;
     */
 }
+
+
+// house ase..tar vitorer value holo tar vitorer taka..ami j kono ghore churi krte pari
+// but jdi adjancy(pasher ta) house e churi kri tahole alarm vajbe o police ashbe
+// max koto tk churi krte parbo from all possible solution
+//[1,2,3.4]--4 no ghor theke tk churi krle kon kon ghore churi krte parbo next r jdi na churi kri then kon kon ghore churi krte parbo next
+// eivbe tree banabo for all.
+//int rob(vector<int> &nums)

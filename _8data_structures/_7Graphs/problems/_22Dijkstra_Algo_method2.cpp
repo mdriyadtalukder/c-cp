@@ -2,8 +2,6 @@
 // TC=O(elogv);sc=(e+v)--its better for sparse graph --for single source
 // multisource  TC=O(velogv)
 // j graph e edge besi(dense) oitai eita use krle TC hote pare=(v^3logv) for multipleSorce..SO DO NOT USE
-#include <bits/stdc++.h>
-using namespace std;
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,3 +58,4 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src)
 
     return dist;
 }
+//vector<int> dijkstra(int V, vector<vector<int>> &edges, int src)

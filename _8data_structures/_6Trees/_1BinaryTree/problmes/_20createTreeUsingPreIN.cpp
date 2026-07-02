@@ -73,3 +73,9 @@ int main()
 
     return 0;
 }
+
+/*int main()
+{
+    int in[] = {4, 2, 5, 1, 6, 3};
+    int pre[] = {1, 2, 4, 5, 3, 6};
+*/

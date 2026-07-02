@@ -1,10 +1,12 @@
 // src ba 0 theke sob node er shortest path ber kra..undirected weighted graph
 // initial sob node er value inifine thkbe..then src or 0 theke weight er maddome node er value count krbo
-// j child er value/weight(value na thkle) choto oita age explore krbo.jdi value set kri node er and oi value ta boro hy any path to that node then oita value ta min value ta hbe.
+// j child er value/weight(value na thkle) choto oita age explore krbo.jdi value set kri node er and oi value ta boro hy any path er to that node then oita value ta min value ta hbe.
 // ekbar kono node er child explore krle oi parent node er edge er dike r jbo na..
-// explore and dist er 2 ta array thkbe..dist er modde jeita sob cheye choto but exlpore hy nai oita pick krbo and explore krbo each time and dist er value update hbe if needed.
+// explore and dist er 2 ta array thkbe..dist er modde jeita sob cheye choto but exlpore hy nai oita pick krbo and explore krbo each time and dist er value update hbe if needed.and explore e thkbe explored node er index true jeta 2 bar explore hbe na.
 // node er vitorer value ta index no
 // TC=O(n^2),SC=O(n)---its better for dense graph
+
+
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> dijkstra(int V, vector<vector<int>> &edges, int src)
@@ -63,3 +65,4 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src)
 
     return dist;
 }
+//vector<int> dijkstra(int V, vector<vector<int>> &edges, int src)

@@ -1,21 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
-Input: coins = [1,2,5], amount = 11
-Output: 3
-Explanation: 11 = 5 + 5 + 1...min koita coins lagbe total
 
-                               11
-                   /            |            \
-                 10             9             6
-              /  |  \        /  |  \       /  |  \
-             9   8   5      8   7   4     5   4   1
-           / | \  /|\  \
-          8  7  4 7 6 3 0
-
-level=3=ans
-
-*/
 int func(int amount, vector<int> &coins, vector<int> &dp)
 {
     if (amount == 0)
@@ -57,3 +42,21 @@ int main()
 
     return 0;
 }
+
+//    cout << coinChange(coins, amount) << endl;
+/*
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1...min koita coins lagbe total
+
+                               11
+                   /            |            \
+                 10             9             6
+              /  |  \        /  |  \       /  |  \
+             9   8   5      8   7   4     5   4   1
+           / | \  /|\  \
+          8  7  4 7 6 3 0
+
+level=3=ans
+
+*/

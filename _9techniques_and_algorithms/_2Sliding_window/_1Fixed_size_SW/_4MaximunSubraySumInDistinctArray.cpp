@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+/*
+{
+    1 : 0,
+    2 : 2,
+    3 : 1
+}
+freq.size() == 3..so when 0 it will be erase
+*/
 long long maximumSubarraySum(vector<int> &nums, int k)
 {
     unordered_map<int, int> freq;

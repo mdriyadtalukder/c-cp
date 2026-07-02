@@ -16,7 +16,7 @@ using namespace std;
 vector<int> bellmanFord(int V, vector<vector<int>> &edges, int S)
 {
     // Code here
-    vector<int> dist(V, 1e8);
+    vector<int> dist(V, 1e8); //infinite
 
     // 1e8 = 10^8
     dist[S] = 0;

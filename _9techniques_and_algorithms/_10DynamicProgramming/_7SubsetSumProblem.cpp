@@ -1,7 +1,7 @@
 // ekta array thkbe take 2 vag krbo..emn vabe krbo jate 2 part er sum same hy..sequence lagbe na..just take any elem from array and vag kro emn vabe j 2 tar sum soman hy
 // total sum even hote hbe as we can divide into 2 vag..odd hole return false hbe
 
-//Partition Equal Subset Sum
+// Partition Equal Subset Sum
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -55,3 +55,44 @@ int main()
 
     return 0;
 }
+
+/*space optimized
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool canPartition(vector<int> &nums)
+{
+    int totalSum = 0;
+    for (int x : nums)
+        totalSum += x;
+
+    if (totalSum % 2)
+        return false;
+
+    int target = totalSum / 2;
+
+    vector<bool> dp(target + 1, false);
+
+    dp[0] = true; // Sum 0 is always possible
+
+    for (int num : nums)
+    {
+        // Traverse backwards (0/1 Knapsack)
+        for (int j = target; j >= num; j--)
+        {
+            dp[j] = dp[j] || dp[j - num];
+        }
+    }
+
+    return dp[target];
+}
+
+int main()
+{
+    vector<int> nums = {1, 5, 11, 5};
+
+    cout << canPartition(nums) << endl; // 1
+
+    return 0;
+}*/

@@ -48,7 +48,7 @@ bool helper(vector<vector<char>> &board, int row, int col)
     }
 
     if (board[row][col] != '.')
-        return helper(board, nextRow, nextCol); //kono value exist krle next sell e jbolike 0,0 to 0,1 cell
+        return helper(board, nextRow, nextCol); //kono value exist krle next sell e jbo like 0,0 to 0,1 cell
 
     for (char dig = '1'; dig <= '9'; dig++) //jdi . thke value exist na kre..
     {

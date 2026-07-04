@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// TC=O(4^n^2) //n*n matrix so n^2..
+// TC=O(4^n^2) //n*n matrix so n^2..ekta n*n matrix e 1 o 0 value thkbe..amra lrft ,right,top,bottom diye jjete parbe..jekhne 0 sei rasta block..ekbar j cell visited hbe seitai jete parbona..so possible koita way ase to go last cell..
 void helper(vector<vector<int>> &mat, int r, int c, string path, vector<string> &ans, vector<vector<bool>> &vis)
 {
     int n = mat.size();

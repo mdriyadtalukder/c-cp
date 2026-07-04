@@ -11,7 +11,7 @@ void getAllCombinations(vector<int> &arr, int idx, int tar,
 
     if (tar == 0)
     {
-        if (s.find(combin) == s.end())
+        if (s.find(combin) == s.end()) // jdi set er vitor na thke taholei push krbo as uniqueness
         {
             ans.push_back(combin);
             s.insert(combin);

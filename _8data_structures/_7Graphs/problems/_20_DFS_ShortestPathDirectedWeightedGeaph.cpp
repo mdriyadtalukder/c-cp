@@ -71,3 +71,95 @@ vector<int> shortestPath(int N, int M, vector<vector<int>> &edges)
 
     return dist;
 }
+
+/*
+LeetCode / GFG Style Problem
+
+Shortest Path in a Directed Acyclic Graph (DAG)
+
+Problem Statement:
+You are given a Directed Acyclic Graph (DAG) with N vertices numbered
+from 0 to N-1 and M weighted directed edges.
+
+Your task is to find the shortest distance from the source vertex 0
+to every other vertex.
+
+If a vertex is not reachable from the source, its distance should be -1.
+
+Note:
+The graph is guaranteed to be a DAG (contains no cycles).
+
+Input:
+- N: Number of vertices.
+- M: Number of edges.
+- edges: A list where each edge is represented as
+         {u, v, wt}, meaning there is a directed edge
+         from u to v with weight wt.
+
+Output:
+- Return a vector<int> of size N where dist[i] is the
+  shortest distance from source vertex 0 to vertex i.
+- If a vertex is unreachable, return -1 for that vertex.
+
+Example 1:
+Input:
+N = 6
+M = 7
+edges = {
+    {0,1,2},
+    {0,4,1},
+    {4,5,4},
+    {4,2,2},
+    {1,2,3},
+    {2,3,6},
+    {5,3,1}
+}
+
+Output:
+{0, 2, 3, 6, 1, 5}
+
+Explanation:
+The shortest distances from source vertex 0 are:
+0 -> 0 = 0
+0 -> 1 = 2
+0 -> 4 = 1
+0 -> 2 = 3   (0 -> 4 -> 2)
+0 -> 5 = 5   (0 -> 4 -> 5)
+0 -> 3 = 6   (0 -> 4 -> 5 -> 3)
+
+Example 2:
+Input:
+N = 5
+M = 3
+edges = {
+    {0,1,2},
+    {1,2,4},
+    {3,4,1}
+}
+
+Output:
+{0, 2, 6, -1, -1}
+
+Explanation:
+Vertices 3 and 4 are not reachable from source 0.
+
+Constraints:
+1 <= N <= 10^5
+0 <= M <= 2 × 10^5
+-10^4 <= wt <= 10^4
+
+Expected Time Complexity:
+O(N + M)
+
+Expected Auxiliary Space:
+O(N)
+
+Approach:
+1. Build the adjacency list of the DAG.
+2. Perform a DFS-based Topological Sort and store the
+   vertices in a stack.
+3. Initialize all distances as INF except dist[0] = 0.
+4. Process vertices in topological order.
+5. Relax all outgoing edges of the current vertex.
+6. Replace remaining INF values with -1.
+*/

@@ -83,3 +83,5 @@ int rob2(vector<int> &nums)
 
     return max(curr1, curr2);
 }
+
+//int rob(vector<int> &nums)

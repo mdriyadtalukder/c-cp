@@ -1,7 +1,7 @@
 // weight and value er array ase and ekta fix weight er poli ba knapsack ase..like w=12..so max value guli diye 12kg vorte hbe poli te.
 // 1st ta borte pari ba nao borte pari..eivbe tree hbe for all node(value)..(0,12)-1st ta nile hbe 10+(1,12)..like 10 is 1st value in array in 0 index
 // 1 is 2nd index an 12 is poli weight..na dile hbe (1,12)..kisu jog be na..so on for all case
-//it is taken and not token concept
+// it is taken and not token concept
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,31 +47,33 @@ int main()
     cout << ans << endl;
 
     return 0;
+}
+/*speace optimized..its 1d
+#include <bits/stdc++.h>
+using namespace std;
 
-    /* bottom up
-    vector<long> v = {1, 2, 3, 4};   // values
-    vector<long> w = {2, 3, 4, 5};   // weights
+int main()
+{
+    vector<long> value = {1, 2, 3, 4};
+    vector<long> weight = {2, 3, 4, 5};
+
     int W = 5;
-    int n = v.size();
+    int n = value.size();
 
-    vector<vector<long>> dp(n + 1, vector<long>(W + 1, 0));
+    vector<long> dp(W + 1, 0);
 
-    for (int i = n - 1; i >= 0; i--) {
-        for (int cap = 0; cap <= W; cap++) {
-
-            long not_take = dp[i + 1][cap];
-
-            long take = LONG_MIN;
-            if (w[i] <= cap) {
-                take = v[i] + dp[i + 1][cap - w[i]];
-            }
-
-            dp[i][cap] = max(take, not_take);
+    for (int i = 0; i < n; i++)
+    {
+        // Traverse backwards
+        for (int j = W; j >= weight[i]; j--)
+        {
+            dp[j] = max(dp[j], value[i] + dp[j - weight[i]]);
         }
     }
 
-    cout << dp[0][W] << endl;
-    return 0;
+    cout << dp[W] << endl;
 
-    */
+    return 0;
 }
+
+*/

@@ -65,4 +65,5 @@ int main() {}
 // proti ta siri er cost deoya ase..uporer siri te jete hole current siri er cost pay krte hbe then 1 or 2 jump dite pari..
 // min cost ta ber krte hbe for n..
 // topdown--n=4 theke niche jabo n theke 2 hbe 2 step nile r ek step nile 3..eivabe so on for all utill get 1 or 0 value..
+
 //int minCostClimbingStairs(vector<int> &cost)

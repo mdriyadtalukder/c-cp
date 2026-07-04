@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-//TC=O(8^n^2)
+//TC=O(8^n^2)..n*n er matrix ase sekhne 0-8 num ase..0,0 index theke suru krbo and dekhbo sequencely 0,1,2,3,4,5,6,7,8 value travel krte parbo nki..krle parble true dibo..er 8 ta move ase ja star er moto dekhte..circle
 bool isValid(vector<vector<int>> &grid, int r, int c, int n, int expVal)
 {
     if (r < 0 || c < 0 || r >= n || c >= n || grid[r][c] != expVal)

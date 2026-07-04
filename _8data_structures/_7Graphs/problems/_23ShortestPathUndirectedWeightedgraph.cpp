@@ -59,7 +59,7 @@ vector<int> shortestPath(int V, int m, vector<vector<int>> &edges)
     }
 
     vector<int> path;
-    if (parent[V] == -1) //if i cant reach mu destination
+    if (parent[V] == -1) //if i cant reach my destination
     {
         path.push_back(-1);
         return path;

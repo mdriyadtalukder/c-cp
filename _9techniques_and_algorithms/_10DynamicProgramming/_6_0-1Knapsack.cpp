@@ -77,3 +77,178 @@ int main()
 }
 
 */
+/*
+0/1 Knapsack Problem
+
+Problem Statement:
+
+You are given:
+
+weight[i] = weight of the ith item
+
+value[i] = value of the ith item
+
+You are also given an integer W
+representing the maximum capacity
+of the knapsack.
+
+Choose items such that:
+
+• Total weight does not exceed W.
+
+• Each item can be selected
+  at most once.
+
+Return the maximum total value
+that can be obtained.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+value  = [1,2,3,4]
+
+weight = [2,3,4,5]
+
+W = 5
+
+Output:
+
+4
+
+Explanation:
+
+Possible selections:
+
+Item 1 + Item 2
+
+Weight = 2 + 3 = 5
+
+Value = 1 + 2 = 3
+
+Item 4
+
+Weight = 5
+
+Value = 4
+
+Maximum value = 4
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+value  = [60,100,120]
+
+weight = [10,20,30]
+
+W = 50
+
+Output:
+
+220
+
+Explanation:
+
+Choose items:
+
+100 + 120
+
+Weight = 20 + 30 = 50
+
+Value = 220
+
+------------------------------------------------
+
+Constraints:
+
+1 <= n <= 100
+
+1 <= W <= 1000
+
+1 <= weight[i] <= W
+
+1 <= value[i] <= 1000
+
+------------------------------------------------
+
+Approaches:
+
+1. Simple Recursion
+   Time  : O(2^N)
+   Space : O(N)
+
+2. Top-Down DP (Memoization)
+   Time  : O(N × W)
+   Space : O(N × W)
+
+3. Bottom-Up DP (Tabulation)
+   Time  : O(N × W)
+   Space : O(N × W)
+
+4. Space Optimized DP
+   Time  : O(N × W)
+   Space : O(W)
+
+------------------------------------------------
+
+DP State:
+
+dp[i][w]
+
+=
+
+Maximum value obtainable
+
+using items from index i
+
+with remaining capacity w.
+
+------------------------------------------------
+
+Transition:
+
+Not Take:
+
+dp[i+1][w]
+
+Take:
+
+value[i] +
+
+dp[i+1][w-weight[i]]
+
+Answer:
+
+max(Take, Not Take)
+
+------------------------------------------------
+
+Base Case:
+
+If no items remain,
+
+return 0.
+
+------------------------------------------------
+
+Important:
+
+This is called the
+
+0/1 Knapsack Problem
+
+because every item has only
+
+two choices:
+
+Take it once
+
+OR
+
+Do not take it.
+*/

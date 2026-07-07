@@ -84,4 +84,179 @@ int rob2(vector<int> &nums)
     return max(curr1, curr2);
 }
 
-//int rob(vector<int> &nums)
+/*
+213. House Robber II
+
+Problem Statement:
+
+You are a professional robber planning to rob
+houses along a street.
+
+Unlike House Robber I,
+the houses are arranged in a circle.
+
+This means:
+
+- The first house and the last house
+  are adjacent.
+
+You cannot rob two adjacent houses.
+
+Return the maximum amount of money
+you can rob without triggering the alarm.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+nums = [2,3,2]
+
+Output:
+
+3
+
+Explanation:
+
+You cannot rob both
+house 1 and house 3.
+
+Best choice:
+
+Rob house 2.
+
+Money = 3
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+nums = [1,2,3,1]
+
+Output:
+
+4
+
+Explanation:
+
+Case 1:
+Exclude last house.
+
+[1,2,3]
+
+Maximum = 4
+
+Case 2:
+Exclude first house.
+
+[2,3,1]
+
+Maximum = 3
+
+Answer = max(4,3) = 4
+
+------------------------------------------------
+
+Example 3:
+
+Input:
+
+nums = [1,2,3]
+
+Output:
+
+3
+
+Explanation:
+
+Rob only house 3.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= nums.length <= 100
+
+0 <= nums[i] <= 1000
+
+------------------------------------------------
+
+Approaches:
+
+1. Top-Down DP
+   Time  : O(N)
+   Space : O(N)
+
+2. Bottom-Up DP
+   Time  : O(N)
+   Space : O(N)
+
+3. Space Optimized DP
+   Time  : O(N)
+   Space : O(1)
+
+------------------------------------------------
+
+Key Observation:
+
+Since the first and last houses
+are adjacent,
+
+they cannot both be robbed.
+
+So solve two separate problems:
+
+Case 1:
+
+Rob houses from
+
+0 → n-2
+
+(Exclude last house)
+
+Case 2:
+
+Rob houses from
+
+1 → n-1
+
+(Exclude first house)
+
+Answer:
+
+max(case1, case2)
+
+------------------------------------------------
+
+DP State:
+
+dp[i] = Maximum money that can be robbed
+up to house i.
+
+Transition:
+
+dp[i] = max(
+
+nums[i] + dp[i-2],   // Pick
+
+dp[i-1]              // Not Pick
+
+)
+
+Base Cases:
+
+dp[0] = nums[0]
+
+dp[1] = max(nums[0], nums[1])
+
+Answer:
+
+max(
+HouseRobber(0...n-2),
+HouseRobber(1...n-1)
+)
+*/
+// int rob(vector<int> &nums)

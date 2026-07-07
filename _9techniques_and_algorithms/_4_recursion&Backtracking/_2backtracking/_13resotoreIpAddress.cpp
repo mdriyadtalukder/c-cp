@@ -8,7 +8,7 @@ bool isValid(string str)
     if (str[0] == '0')
         return false;
 
-    int val = stoi(str);
+    int val = stoi(str); //make int from string
 
     return val <= 255;
 }

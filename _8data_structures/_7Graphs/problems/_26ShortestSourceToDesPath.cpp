@@ -25,7 +25,7 @@ public:
             return 0;
         if (!A[0][0])
             return -1;
-
+        
         // row, col, step
         queue<pair<int, pair<int, int>>> q;
         q.push({0, {0, 0}}); // (i, (j, step))
@@ -58,3 +58,162 @@ public:
         return -1;
     }
 };
+
+
+/*
+Shortest Source to Destination Path
+
+Problem Statement:
+
+You are given an N × M binary matrix.
+
+Each cell contains either:
+
+1 -> Walkable cell
+
+0 -> Blocked cell
+
+You start from the top-left corner (0,0).
+
+Your destination is (X,Y).
+
+You can move only in four directions:
+
+- Up
+- Down
+- Left
+- Right
+
+Find the length of the shortest path
+from (0,0) to (X,Y).
+
+If the destination cannot be reached,
+return -1.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+A =
+
+{
+    {1,1,1,1},
+    {0,1,0,1},
+    {1,1,1,1},
+    {1,0,1,1}
+}
+
+Destination:
+
+X = 3
+Y = 3
+
+Output:
+
+6
+
+Explanation:
+
+One shortest path is:
+
+(0,0)
+↓
+
+(0,1)
+↓
+
+(1,1)
+↓
+
+(2,1)
+↓
+
+(2,2)
+↓
+
+(2,3)
+↓
+
+(3,3)
+
+Total moves = 6
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+A =
+
+{
+    {1,0},
+    {0,1}
+}
+
+Destination:
+
+X = 1
+Y = 1
+
+Output:
+
+-1
+
+Explanation:
+
+There is no valid path.
+
+------------------------------------------------
+
+Example 3:
+
+Input:
+
+A =
+
+{
+    {1}
+}
+
+Destination:
+
+X = 0
+Y = 0
+
+Output:
+
+0
+
+Explanation:
+
+Source and destination are the same.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= N, M <= 500
+
+A[i][j] is either 0 or 1.
+
+Expected Time Complexity:
+O(N × M)
+
+Expected Auxiliary Space:
+O(N × M) in the worst case (queue)
+
+Approach:
+
+1. If the source is blocked, return -1.
+2. Start BFS from (0,0).
+3. Visit only valid cells having value 1.
+4. Mark visited cells by changing them to 0
+   (no separate visited array needed).
+5. As soon as the destination is reached,
+   return the current distance.
+6. If BFS finishes without reaching the destination,
+   return -1.
+*/

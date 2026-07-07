@@ -37,7 +37,7 @@ int climbStairs(int n)
     next2 = next;
     next = curr;
     }
-    return curr;
+    return next;
 
         */
 }
@@ -50,4 +50,153 @@ int climbStairs(int n)
 // last nodes 5 or 6 hbe..5 hole r check krbona
 
 // uporer ta recursion silo..top down e every step er value store kre rakhbo..
+
+/*
+70. Climbing Stairs
+
+Problem Statement:
+
+You are climbing a staircase.
+
+It takes n steps to reach the top.
+
+Each time you can climb either:
+
+- 1 step
+- 2 steps
+
+Return the total number of distinct ways
+to reach the top.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+n = 2
+
+Output:
+
+2
+
+Explanation:
+
+Way 1:
+
+1 + 1
+
+Way 2:
+
+2
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+n = 3
+
+Output:
+
+3
+
+Explanation:
+
+Way 1:
+
+1 + 1 + 1
+
+Way 2:
+
+1 + 2
+
+Way 3:
+
+2 + 1
+
+------------------------------------------------
+
+Example 3:
+
+Input:
+
+n = 5
+
+Output:
+
+8
+
+Explanation:
+
+Possible ways:
+
+1+1+1+1+1
+
+1+1+1+2
+
+1+1+2+1
+
+1+2+1+1
+
+2+1+1+1
+
+2+2+1
+
+2+1+2
+
+1+2+2
+
+Total = 8 ways.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= n <= 45
+
+------------------------------------------------
+
+Approaches:
+
+1. Simple Recursion
+   Time  : O(2^N)
+   Space : O(N)
+
+2. Top-Down DP (Memoization)
+   Time  : O(N)
+   Space : O(N)
+
+3. Bottom-Up DP (Tabulation)
+   Time  : O(N)
+   Space : O(N)
+
+4. Space Optimized DP
+   Time  : O(N)
+   Space : O(1)
+
+------------------------------------------------
+
+DP State:
+
+Let dp[i] = Number of ways to reach
+the top starting from step i.
+
+Transition:
+
+dp[i] = dp[i+1] + dp[i+2]
+
+Base Cases:
+
+dp[n] = 1
+(Reached exactly the top.)
+
+dp[n+1] = 0
+(Crossed the top, invalid path.)
+
+Answer:
+
+dp[0]
+*/
 //int climbStairs(int n)

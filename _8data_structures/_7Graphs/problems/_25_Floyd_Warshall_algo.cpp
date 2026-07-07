@@ -28,15 +28,15 @@ void floydWarshall(vector<vector<int>> &matrix)
     }
 
     // Floyd Warshall Algorithm
-    for (int k = 0; k < n; k++)
+    for (int k = 0; k < n; k++) // intermadiate node
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) //from
         {
-            for (int j = 0; j < n; j++)
+            for (int j = 0; j < n; j++)//to
             {
 
                 // Important check to avoid overflow
-                if (matrix[i][k] == INT_MAX || matrix[k][j] == INT_MAX)
+                if (matrix[i][k] == INT_MAX || matrix[k][j] == INT_MAX) //row column skip from 2nd matrix
                     continue;
 
                 matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
@@ -56,3 +56,136 @@ void floydWarshall(vector<vector<int>> &matrix)
         }
     }
 }
+
+/*
+Floyd Warshall Algorithm
+
+Problem Statement:
+
+You are given a directed weighted graph represented
+by an adjacency matrix.
+
+matrix[i][j] represents the weight of the edge
+from vertex i to vertex j.
+
+If there is no direct edge,
+matrix[i][j] = -1.
+
+Your task is to find the shortest distance
+between every pair of vertices.
+
+Update the given matrix so that:
+
+matrix[i][j] contains the shortest distance
+from vertex i to vertex j.
+
+If no path exists,
+the value should remain -1.
+
+------------------------------------------------
+
+Input:
+
+matrix =
+
+{
+    {0,   3,  -1,  7},
+    {-1,  0,   2, -1},
+    {5,  -1,   0,  1},
+    {2,  -1,  -1,  0}
+}
+
+Output:
+
+{
+    {0, 3, 5, 6},
+    {5, 0, 2, 3},
+    {3, 6, 0, 1},
+    {2, 5, 7, 0}
+}
+
+Explanation:
+
+Initially,
+
+0 -> 3 = 7
+
+But,
+
+0 -> 1 -> 2 -> 3
+
+= 3 + 2 + 1
+
+= 6
+
+Since 6 < 7,
+
+update:
+
+0 -> 3 = 6.
+
+The same process is applied for every pair
+of vertices.
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+{
+    {0, 5, -1},
+    {-1, 0, 2},
+    {-1, -1, 0}
+}
+
+Output:
+
+{
+    {0, 5, 7},
+    {-1, 0, 2},
+    {-1, -1, 0}
+}
+
+Explanation:
+
+0 -> 2
+
+can be reached through
+
+0 -> 1 -> 2
+
+with cost = 5 + 2 = 7.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= n <= 100
+
+-1 <= matrix[i][j] <= 1000
+
+matrix[i][i] = 0
+
+Expected Time Complexity:
+O(n³)
+
+Expected Auxiliary Space:
+O(1)
+
+Approach:
+
+1. Treat every vertex as an intermediate node.
+2. For every pair (i, j), check whether
+   going through the intermediate node k
+   gives a shorter path.
+3. Update:
+
+   dist[i][j] =
+   min(dist[i][j],
+       dist[i][k] + dist[k][j])
+
+4. Repeat for every intermediate node.
+5. The final matrix contains the shortest
+   distance between every pair of vertices.
+*/

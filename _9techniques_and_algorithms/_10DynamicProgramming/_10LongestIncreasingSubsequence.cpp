@@ -45,3 +45,42 @@ int main()
 
     return 0;
 }
+/*
+space optimzed version
+#include <bits/stdc++.h>
+using namespace std;
+
+int lengthOfLIS(vector<int> &nums)
+{
+    int n = nums.size();
+
+    vector<int> next(n + 1, 0), curr(n + 1, 0);
+
+    for (int currIndex = n - 1; currIndex >= 0; currIndex--)
+    {
+        for (int prevIndex = currIndex - 1; prevIndex >= -1; prevIndex--)
+        {
+            int notTake = next[prevIndex + 1];
+
+            int take = 0;
+            if (prevIndex == -1 || nums[currIndex] > nums[prevIndex])
+            {
+                take = 1 + next[currIndex + 1];
+            }
+
+            curr[prevIndex + 1] = max(take, notTake);
+        }
+
+        next = curr;
+    }
+
+    return next[0];
+}
+
+int main()
+{
+    vector<int> nums = {10, 9, 2, 5, 3, 7, 101, 18};
+
+    cout << lengthOfLIS(nums) << endl;
+}
+*/

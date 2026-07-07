@@ -1,4 +1,4 @@
-// every edges k ekbar kre visit kre in graph..its called euler path..
+// every edges k ekbar kre visit kre in graph..its called euler path..every edge ekbr kre visit kre..node/vertex onkbar visit krleo prblm nei.
 //  every edges k ekbar kre visit kre in graph and starting node and ending node same hbe..like circle..its called euler circuit.
 // every edges ekbar kre visit kre..not every node..like ekta node ase jar kono edge nai in a graph..oita visit na kreo EP ba EC hobe jdi eder condition meet kre..every edge ekbr visit kre.
 // every node er degree(koita egde er shthe connected ekta node) jdi even shongkha hy and all non zero degree connected hy tahole EC possible.
@@ -76,3 +76,157 @@ int isEulerCircuit(int V, vector<int> adj[])
     else
         return 1;
 }
+
+
+/*
+Euler Path and Circuit
+
+Problem Statement:
+
+Given an undirected graph, determine whether it has:
+
+1. Euler Circuit
+2. Euler Path
+3. Neither
+
+Definitions:
+
+Euler Path:
+A path that visits every EDGE exactly once.
+
+Euler Circuit:
+A path that visits every EDGE exactly once
+and starts and ends at the same vertex.
+
+A vertex may be visited multiple times.
+
+Only every edge must be visited exactly once.
+
+Vertices having degree 0
+(isolated vertices)
+are ignored.
+
+Return:
+
+2 -> Euler Circuit exists
+
+1 -> Euler Path exists
+
+0 -> Neither exists
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+0 ----- 1
+|       |
+|       |
+3 ----- 2
+
+Output:
+
+2
+
+Explanation:
+
+All vertices have even degree.
+
+The graph is connected.
+
+Euler Circuit exists.
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+0 ----- 1 ----- 2
+
+Output:
+
+1
+
+Explanation:
+
+Vertex 0 has odd degree.
+
+Vertex 2 has odd degree.
+
+Exactly two odd-degree vertices exist.
+
+Euler Path exists,
+but Euler Circuit does not.
+
+------------------------------------------------
+
+Example 3:
+
+Input:
+
+0 ----- 1
+
+2 ----- 3
+
+Output:
+
+0
+
+Explanation:
+
+The graph is disconnected.
+
+All non-zero degree vertices
+are not connected.
+
+Therefore neither Euler Path
+nor Euler Circuit exists.
+
+------------------------------------------------
+
+Conditions:
+
+Euler Circuit:
+
+1. Every vertex has even degree.
+2. All vertices having non-zero degree
+   are connected.
+
+Euler Path:
+
+1. Exactly 0 or 2 vertices
+   have odd degree.
+2. All vertices having non-zero degree
+   are connected.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= V <= 10^5
+
+0 <= E <= 2 × 10^5
+
+Expected Time Complexity:
+O(V + E)
+
+Expected Auxiliary Space:
+O(V)
+
+Approach:
+
+1. Calculate the degree of every vertex.
+2. Count the number of odd-degree vertices.
+3. If odd-degree vertices are neither
+   0 nor 2, return 0.
+4. Perform DFS from any non-zero degree vertex.
+5. Verify that every non-zero degree vertex
+   is visited.
+6. If the graph is disconnected,
+   return 0.
+7. If odd-degree vertices = 0,
+   return 2 (Euler Circuit).
+8. Otherwise return 1 (Euler Path).
+*/

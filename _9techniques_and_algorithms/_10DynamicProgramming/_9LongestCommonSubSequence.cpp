@@ -5,8 +5,7 @@
 // s=aze and t=aeb ...so common subsequence ae..so result-2
 // task---> s=aze and t=aeb ...so common subsequence ae..task how print ae?
 
-
-//longest palindromic subsequence is same as it just s k reverse kre oi 2 tai compare kre result dim.
+// longest palindromic subsequence is same as it just s k reverse kre oi 2 tai compare kre result dim.
 //
 
 #include <bits/stdc++.h>
@@ -97,3 +96,121 @@ int main()
 
     return 0;
 }
+
+/*
+Explanation:
+
+Suppose:
+
+text1 = "abcde"
+text2 = "ace"
+
+We compare one character from each string.
+
+If both characters are same:
+Take that character into the answer.
+Move both pointers forward.
+
+Example:
+a == a
+Answer = 1 + LCS("bcde","ce")
+
+If characters are different:
+We have two choices:
+1. Skip character from text1.
+2. Skip character from text2.
+
+Take whichever gives the larger answer.
+
+Example:
+
+text1 = abcde
+         ^
+text2 = ace
+         ^
+
+b != c
+
+Option 1:
+Skip 'b'
+LCS("cde","ce")
+
+Option 2:
+Skip 'c'
+LCS("bcde","e")
+
+Take maximum.
+
+Tree Idea:
+
+          (i,j)
+         /     \
+   skip i     skip j
+     /           \
+(i+1,j)      (i,j+1)
+
+If characters match:
+
+      (i,j)
+         |
+   1 + (i+1,j+1)
+
+Memoization stores every (i,j) answer so repeated states
+are computed only once.
+
+Time Complexity:
+O(N × M)
+
+Space Complexity:
+O(N × M)
+
+----------------------------------------------------
+
+How to print the actual LCS?
+
+After building the Bottom-Up DP table:
+
+Start from (0,0)
+
+while(i<n && j<m)
+{
+    if(text1[i]==text2[j])
+    {
+        cout<<text1[i];
+        i++;
+        j++;
+    }
+    else if(dp[i+1][j] >= dp[i][j+1])
+        i++;
+    else
+        j++;
+}
+
+Example:
+
+text1 = abcde
+text2 = ace
+
+Output:
+ace
+
+----------------------------------------------------
+
+Longest Palindromic Subsequence (LPS)
+
+LPS is solved using exactly the same algorithm.
+
+Steps:
+1. Reverse the string.
+2. Find LCS(original, reversed).
+
+Example:
+
+s = "bbbab"
+
+reverse = "babbb"
+
+LCS = "bbbb"
+
+Answer = 4
+*/

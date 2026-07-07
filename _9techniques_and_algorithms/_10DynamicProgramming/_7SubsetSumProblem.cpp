@@ -96,3 +96,164 @@ int main()
 
     return 0;
 }*/
+
+//bool canPartition(vector<int> &nums)
+/*
+416. Partition Equal Subset Sum
+
+Problem Statement:
+
+You are given an integer array nums.
+
+Return true if the array can be
+partitioned into two subsets such that
+the sum of elements in both subsets
+is equal.
+
+Otherwise return false.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+nums = [1,5,11,5]
+
+Output:
+
+true
+
+Explanation:
+
+Subset 1:
+
+[1,5,5]
+
+Sum = 11
+
+Subset 2:
+
+[11]
+
+Sum = 11
+
+Both subsets have equal sum.
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+nums = [1,2,3,5]
+
+Output:
+
+false
+
+Explanation:
+
+Total sum = 11
+
+Since the total sum is odd,
+
+it cannot be divided equally.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= nums.length <= 200
+
+1 <= nums[i] <= 100
+
+------------------------------------------------
+
+Approaches:
+
+1. Simple Recursion
+   Time  : O(2^N)
+
+2. Top-Down DP (Memoization)
+   Time  : O(N × Target)
+   Space : O(N × Target)
+
+3. Bottom-Up DP (Tabulation)
+   Time  : O(N × Target)
+   Space : O(N × Target)
+
+4. Space Optimized DP
+   Time  : O(N × Target)
+   Space : O(Target)
+
+------------------------------------------------
+
+Key Observation:
+
+If total sum is odd,
+
+answer is always false.
+
+Otherwise,
+
+target = totalSum / 2
+
+Now the problem becomes:
+
+Can we select some elements
+whose sum equals target?
+
+This is exactly the
+Subset Sum (0/1 Knapsack)
+problem.
+
+------------------------------------------------
+
+DP State:
+
+dp[i][sum]
+
+=
+
+Can we make the current sum
+using elements from index i onward?
+
+------------------------------------------------
+
+Transition:
+
+Not Take:
+
+dp[i+1][sum]
+
+Take:
+
+dp[i+1][sum + nums[i]]
+
+Answer:
+
+Take OR Not Take
+
+------------------------------------------------
+
+Base Case:
+
+When all elements are processed:
+
+Return
+
+(sum == target)
+
+------------------------------------------------
+
+Answer:
+
+true
+
+if target sum is possible,
+
+otherwise
+
+false.
+*/

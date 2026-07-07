@@ -133,3 +133,185 @@ int main() {
 }
 
 */
+
+/*
+Grid Paths
+
+Problem Statement:
+
+You are given an n × m grid.
+
+Each cell contains either:
+
+'.'  -> Empty cell
+
+'#'  -> Blocked cell
+
+You start from the top-left cell
+(0,0).
+
+Your destination is the
+bottom-right cell
+(n-1,m-1).
+
+You may move only:
+
+• Right
+
+or
+
+• Down
+
+You cannot move into
+blocked cells.
+
+Return the total number
+of different paths from
+source to destination.
+
+Since the answer may be large,
+
+return it modulo
+
+1,000,000,007.
+
+------------------------------------------------
+
+Example 1:
+
+Input:
+
+grid =
+
+...
+
+.#.
+
+...
+
+Output:
+
+2
+
+Explanation:
+
+Possible paths:
+
+Right → Right → Down → Down
+
+Down → Down → Right → Right
+
+------------------------------------------------
+
+Example 2:
+
+Input:
+
+grid =
+
+...
+
+###
+
+...
+
+Output:
+
+0
+
+Explanation:
+
+Middle row is completely blocked.
+
+No valid path exists.
+
+------------------------------------------------
+
+Constraints:
+
+1 <= n,m <= 1000
+
+grid[i][j] is either
+
+'.'
+
+or
+
+'#'
+
+------------------------------------------------
+
+Approaches:
+
+1. Simple Recursion
+   Time  : O(2^(N+M))
+
+2. Top-Down DP (Memoization)
+   Time  : O(N × M)
+   Space : O(N × M)
+
+3. Bottom-Up DP (Tabulation)
+   Time  : O(N × M)
+   Space : O(N × M)
+
+4. Space Optimized DP
+   Time  : O(N × M)
+   Space : O(M)
+
+------------------------------------------------
+
+DP State:
+
+dp[i][j]
+
+=
+
+Number of ways to reach
+the destination from cell (i,j).
+
+------------------------------------------------
+
+Transition:
+
+dp[i][j]
+
+=
+
+dp[i][j+1]
+
++
+
+dp[i+1][j]
+
+(Right + Down)
+
+------------------------------------------------
+
+Base Cases:
+
+Out of grid
+
+or
+
+Blocked cell
+
+→ 0
+
+Destination reached
+
+→ 1
+
+------------------------------------------------
+
+Answer:
+
+dp[0][0]
+
+------------------------------------------------
+
+Related Problems:
+
+• LeetCode 63 - Unique Paths II
+
+• CSES - Grid Paths
+*/

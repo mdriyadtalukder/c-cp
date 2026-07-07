@@ -1,4 +1,4 @@
-// 0 to 8 er shortest path dao..like 0->1->4->8.ans=0148
+// 0 to 8 er shortest path dao..like 0->1->4->8.ans=0148..undirected unweighted graph
 // visisted array and parent array..parent array te parent node er value store hbe.like 6..6 er parent 5 ..so 6 index e 5 store krbo
 // ans hbe..0-8..so 8 er index e jao and value dekho and index ta result e dukao..then value er index e jao..so on until get -1 value
 #include <bits/stdc++.h>

@@ -1,4 +1,4 @@
-// 0 theke shorte way te ekek ta node o jaoya..dorlam every egdes weight 1 as its unweighted..
+// 0 theke shorte way te ekek ta node o jaoya..dorlam every egdes weight 1 as its unweighted..//undirected unweighted graph
 // bfs vabe node traversal krbo..ekbar jeitai jbo seitai r jbo na..
 /// ekta visited node nibo..visited hyle 1 baniye dibi..na hy 0 thkbe.
 //.r ekta distances array with -1 values..oita +1 krbo ager distance+1;

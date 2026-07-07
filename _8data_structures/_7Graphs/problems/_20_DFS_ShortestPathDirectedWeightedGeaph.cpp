@@ -1,4 +1,4 @@
-// dfs er topological sort use hbe
+// dfs er topological sort use hbe..directed weighted Acyclic graph..
 // stack e sob node dukabo jokhn backtracking er time hbe tokhn current ode dukabo.
 // then oigular dist ber krbo and ans vector e rakhbo
 // sob node er value infinite thkbe 1st e..then pre nodes weight er sum and je node e jabe tar value er min ber kre oi node er value dibo(jetai jabe)

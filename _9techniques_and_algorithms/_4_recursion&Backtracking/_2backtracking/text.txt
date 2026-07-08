@@ -1,0 +1,7 @@
+//soduko solver
+//n queen
+//combination sum all
+//palindrom partition
+//retore ip adrees
+//rat in maze
+//knight tour

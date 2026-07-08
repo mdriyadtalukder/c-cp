@@ -1,6 +1,6 @@
 // bridge sei edge jake remove krle graph 2 part e vag hbe..baa sei edge ta cycle er part na..
-// 2 ta array hbe disc and low...jdi cycle hy tahole parent and child er low er min ta parent k dibo.pichate thkbe and low update krte thkbo min ta diye jdi amra cycle er maddhome oi min e powchate pari.
-// and jdi disc[parent]<low[child] hole bridge hbe
+// 2 ta array hbe disc and low...jdi cycle hy tahole jar vitor theke tir ashe and jar vitore tir jai eder low er min ta jar vitor theke tir ashe take k dibo...and back krbo and eivbe sobar low set krte thkbo until get new edge..low update krte thkbo min ta diye jdi amra cycle er maddhome oi min e powchate pari.
+// and jdi disc[parent]<low[child] hole bridge hbe..jar theke tir ashe tar dis<jar dike jai tar low..back er khetre parents na..ashol parent vs child
 // Time: O(V + E)---Space: O(V + E)
 #include <bits/stdc++.h>
 using namespace std;
@@ -70,3 +70,282 @@ vector<vector<int>> criticalConnections(int n, vector<vector<int>> &connections)
 
     return Bridges;
 }
+
+/*
+-------------------------------------------------------
+Explanation
+
+Bridge
+
+A bridge is an edge whose removal disconnects the graph.
+
+Example
+
+0-----1-----2
+
+Removing edge (1,2)
+
+0-----1     2
+
+Graph becomes disconnected.
+
+So (1,2) is a Bridge.
+
+-------------------------------------------------------
+
+If the edge belongs to a cycle,
+
+it is NOT a bridge.
+
+Example
+
+0
+|\
+| \
+1--2
+
+Remove edge (0,1)
+
+Still
+
+0 -> 2 -> 1
+
+So graph remains connected.
+
+Hence it is NOT a bridge.
+
+-------------------------------------------------------
+
+Idea
+
+During DFS we maintain two arrays.
+
+1.
+
+disc[node]
+
+Discovery Time
+
+The time when this node is first visited.
+
+Example
+
+disc
+
+0 1 2 3 ...
+
+-------------------------------------------------------
+
+2.
+
+low[node]
+
+The earliest (minimum discovery time)
+reachable from this node
+using
+
+Tree edges
++
+At most one back edge.
+
+Initially
+
+low[node]=disc[node]
+
+Later it becomes smaller
+if a back edge exists.
+
+-------------------------------------------------------
+
+Back Edge
+
+A visited neighbour
+that is NOT the parent.
+
+Example
+
+0
+|\
+| \
+1--2
+
+DFS
+
+0→1→2
+
+Edge
+
+2→0
+
+is Back Edge.
+
+So
+
+low[2]=min(low[2],disc[0])
+
+-------------------------------------------------------
+
+Tree Edge
+
+Edge through which DFS goes deeper.
+
+0→1
+
+1→2
+
+Both are tree edges.
+
+-------------------------------------------------------
+
+After returning from child
+
+Update
+
+low[parent]
+
+using
+
+low[child]
+
+low[parent]=min(low[parent],low[child])
+
+-------------------------------------------------------
+
+Bridge Condition
+
+If
+
+low[child] > disc[parent]
+
+then
+
+Parent cannot be reached again
+through any alternate path.
+
+Therefore
+
+Parent ----- Child
+
+is the ONLY connection.
+
+Hence
+
+It is a Bridge.
+
+-------------------------------------------------------
+
+Example
+
+0
+|
+1
+|\
+| \
+2--3
+
+Suppose
+
+disc
+
+0 : 0
+
+1 : 1
+
+2 : 2
+
+3 : 3
+
+Because
+
+2 and 3 form a cycle
+
+low
+
+3=2
+
+2=2
+
+1=1
+
+Now
+
+low[2]=2
+
+disc[1]=1
+
+2>1
+
+So
+
+1-2
+
+is Bridge.
+
+-------------------------------------------------------
+
+Why
+
+low[child] > disc[parent]
+
+?
+
+If
+
+low[child]
+
+cannot go above parent
+
+(no back edge)
+
+then
+
+removing
+
+parent-child
+
+disconnects child subtree.
+
+-------------------------------------------------------
+
+Time Complexity
+
+Building Graph
+
+O(E)
+
+DFS
+
+O(V+E)
+
+Overall
+
+O(V+E)
+
+-------------------------------------------------------
+
+Space Complexity
+
+Adjacency List
+
+O(V+E)
+
+disc
+
+O(V)
+
+low
+
+O(V)
+
+visited
+
+O(V)
+
+Recursion Stack
+
+O(V)
+
+Overall
+
+O(V+E)
+*/

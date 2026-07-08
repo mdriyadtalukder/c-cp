@@ -75,3 +75,35 @@ vector<int> articulationPoints(int V, vector<int> adj[])
 
     return ans;
 }
+
+/*
+Problem: Articulation Point (Cut Vertex)
+
+Given an undirected connected graph with V vertices and adjacency list adj[].
+
+An Articulation Point (Cut Vertex) is a vertex that, if removed
+(along with all its connected edges), increases the number of
+connected components in the graph.
+
+Return all articulation points in sorted order.
+If no articulation point exists, return {-1}.
+
+Example:
+
+Input:
+V = 5
+Edges:
+0-1
+1-2
+2-0
+1-3
+3-4
+
+Output:
+1 3
+
+Explanation:
+Removing vertex 1 disconnects {3,4} from the rest of the graph.
+Removing vertex 3 disconnects vertex 4.
+Hence both 1 and 3 are articulation points.
+*/

@@ -89,3 +89,46 @@ vector<vector<int>> tarjans(int V, vector<vector<int>> &adj)
     sort(ans.begin(), ans.end());
     return ans;
 }
+// Problem: Strongly Connected Components (Tarjan's Algorithm)
+// LeetCode Equivalent: No direct LeetCode problem
+// GeeksforGeeks: Tarjan's Algorithm
+
+/*
+Question:
+Given a directed graph with V vertices and its adjacency list,
+print all the Strongly Connected Components (SCCs).
+
+A Strongly Connected Component (SCC) is a maximal group of vertices
+such that every vertex is reachable from every other vertex
+through directed paths.
+
+Return every SCC as a separate list.
+The nodes inside each SCC should be sorted (if required),
+and the collection of SCCs may also be sorted depending on the problem.
+
+Example:
+Input:
+V = 8
+Edges:
+0 → 1
+1 → 2
+2 → 0
+2 → 3
+3 → 4
+4 → 5
+5 → 3
+6 → 5
+6 → 7
+7 → 6
+
+Output:
+[[0,1,2],[3,4,5],[6,7]]
+
+Explanation:
+SCC 1 = {0,1,2}
+SCC 2 = {3,4,5}
+SCC 3 = {6,7}
+
+Time Complexity: O(V + E)
+Space Complexity: O(V)
+*/

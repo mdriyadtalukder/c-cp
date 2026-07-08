@@ -83,3 +83,32 @@ int kosaraju(int V, vector<vector<int>> &edges)
 
     return SCC;
 }
+// Problem: Strongly Connected Components (Kosaraju's Algorithm)
+// LeetCode Equivalent: No direct LeetCode problem
+// GeeksforGeeks: Strongly Connected Components (Kosaraju's Algo)
+
+/*
+Question:
+Given a directed graph with V vertices and a list of directed edges,
+find the total number of Strongly Connected Components (SCCs).
+
+A Strongly Connected Component (SCC) is a maximal group of vertices
+such that every vertex is reachable from every other vertex in the group.
+
+Example:
+Input:
+V = 5
+Edges = {{0,2},{2,1},{1,0},{0,3},{3,4}}
+
+Output:
+3
+
+Explanation:
+SCCs are:
+{0,1,2}
+{3}
+{4}
+
+Time Complexity: O(V + E)
+Space Complexity: O(V + E)
+*/

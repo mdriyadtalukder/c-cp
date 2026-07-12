@@ -37,7 +37,7 @@ int climbStairs(int n)
     next2 = next;
     next = curr;
     }
-    return next;
+    return curr;
 
         */
 }

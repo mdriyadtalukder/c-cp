@@ -20,8 +20,8 @@ void floydWarshall(vector<vector<int>> &matrix)
     {
         for (int j = 0; j < n; j++)
         {
-            if (matrix[i][j] == -1)
-            { // 1e8
+            if (matrix[i][j] == -1) // 1e8
+            {
                 matrix[i][j] = INT_MAX;
             }
         }
@@ -30,13 +30,13 @@ void floydWarshall(vector<vector<int>> &matrix)
     // Floyd Warshall Algorithm
     for (int k = 0; k < n; k++) // intermadiate node
     {
-        for (int i = 0; i < n; i++) //from
+        for (int i = 0; i < n; i++) // from
         {
-            for (int j = 0; j < n; j++)//to
+            for (int j = 0; j < n; j++) // to
             {
 
                 // Important check to avoid overflow
-                if (matrix[i][k] == INT_MAX || matrix[k][j] == INT_MAX) //row column skip from 2nd matrix
+                if (matrix[i][k] == INT_MAX || matrix[k][j] == INT_MAX) // row column skip from 2nd matrix
                     continue;
 
                 matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);

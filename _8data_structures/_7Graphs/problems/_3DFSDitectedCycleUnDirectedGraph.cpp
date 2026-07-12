@@ -1,4 +1,4 @@
-// ekta node jdi 1 er besi visisted hy and oita parent na hy taile oitai cycle ase..ekadin node er child same ase nki
+// ekta node jdi 1 er besi visited hy and oita parent na hy taile oitai cycle ase..ekadin node er child same ase nki
 // TC=O(v+e)..SC=O(v)
 #include <bits/stdc++.h>
 using namespace std;

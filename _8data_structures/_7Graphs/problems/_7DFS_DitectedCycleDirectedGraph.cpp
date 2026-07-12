@@ -1,4 +1,4 @@
-// root node theke sora -> sudu jete thkbo..and curr er path er value 1 dite thkbo in path vector and visited 1 hbe..jkhn back krbo tokhn abr just oi curr path er value 0 kre dibo..
+// root node theke soja -> sudu jete thkbo..and curr er path er value 1 dite thkbo in path vector and visited 1 hbe..jkhn back krbo tokhn abr just oi curr path er value 0 kre dibo..
 //jdi current path e ekta node 2 bar pai taile oita cycle
 #include <bits/stdc++.h>
 using namespace std;

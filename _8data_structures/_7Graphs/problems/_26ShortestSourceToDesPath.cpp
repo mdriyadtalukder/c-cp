@@ -59,7 +59,62 @@ public:
     }
 };
 
+/* latest
+class Solution {
+public:
+    int row[4] = {1, -1, 0, 0};
+    int col[4] = {0, 0, 1, -1};
 
+    bool valid(int r, int c, int n, int m) {
+        return r >= 0 && c >= 0 && r < n && c < m;
+    }
+
+    int shortestPath(vector<vector<int>> &mat, vector<int> &src, vector<int> &dest) {
+
+        int n = mat.size();
+        int m = mat[0].size();
+
+        int sr = src[0], sc = src[1];
+        int dr = dest[0], dc = dest[1];
+
+        if (mat[sr][sc] == 0 || mat[dr][dc] == 0)
+            return -1;
+
+        if (sr == dr && sc == dc)
+            return 0;
+
+        queue<pair<pair<int,int>,int>> q;
+        q.push({{sr, sc}, 0});
+
+        mat[sr][sc] = 0;   // mark visited
+
+        while (!q.empty()) {
+
+            int r = q.front().first.first;
+            int c = q.front().first.second;
+            int dist = q.front().second;
+            q.pop();
+
+            for (int k = 0; k < 4; k++) {
+
+                int nr = r + row[k];
+                int nc = c + col[k];
+
+                if (valid(nr, nc, n, m) && mat[nr][nc] == 1) {
+
+                    if (nr == dr && nc == dc)
+                        return dist + 1;
+
+                    mat[nr][nc] = 0;
+                    q.push({{nr, nc}, dist + 1});
+                }
+            }
+        }
+
+        return -1;
+    }
+};
+*/
 /*
 Shortest Source to Destination Path
 

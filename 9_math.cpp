@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <cmath>    // Required for math functions
 using namespace std;
 
@@ -6,7 +6,6 @@ int main() {
     double num = 9.0;
     double neg = -9.0;
     double dec = 4.7;
-
     // 1. Square root
     cout << "sqrt(" << num << ") = " << sqrt(num) << endl;  // 3
 

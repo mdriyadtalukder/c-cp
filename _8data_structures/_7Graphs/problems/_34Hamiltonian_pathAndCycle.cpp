@@ -22,8 +22,8 @@ bool DFS(int node, vector<vector<int>> &adj, vector<bool> &visited, int &count, 
         }
     }
 
-    visited[node] = 0; //count==n na hole..sob node visited na hole
-    count--; //count==n na hole..sob node visited na hole
+    visited[node] = 0; // count==n na hole..sob node visited na hole
+    count--;           // count==n na hole..sob node visited na hole
 
     return 0;
 }
@@ -37,6 +37,14 @@ bool check(int N, int M, vector<vector<int>> Edges)
         adj[Edges[i][0] - 1].push_back(Edges[i][1] - 1);
         adj[Edges[i][1] - 1].push_back(Edges[i][0] - 1);
     }
+    // vector<int> adj[n];
+    // for (auto &e : edges)
+    // {
+    //     int u = e[0] - 1;
+    //     int v = e[1] - 1;
+    //     adj[u].push_back(v);
+    //     adj[v].push_back(u);
+    // }
 
     vector<bool> visited(N, 0);
 

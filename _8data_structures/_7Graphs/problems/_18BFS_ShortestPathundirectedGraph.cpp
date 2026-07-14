@@ -44,7 +44,7 @@ vector<int> shortestPath(int V, vector<vector<int>> &edges, int src)
         }
     }
 
-    return dist;
+    return dist; // return dist[dest]//if dest is given
 }
 
 /*

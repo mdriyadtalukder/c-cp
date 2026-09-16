@@ -32,19 +32,19 @@ bool check(int N, int M, vector<vector<int>> Edges)
 {
     vector<vector<int>> adj(N);
 
-    for (int i = 0; i < M; i++)
-    {
-        adj[Edges[i][0] - 1].push_back(Edges[i][1] - 1);
-        adj[Edges[i][1] - 1].push_back(Edges[i][0] - 1);
-    }
-    // vector<int> adj[n];
-    // for (auto &e : edges)
+    // for (int i = 0; i < M; i++)
     // {
-    //     int u = e[0] - 1;
-    //     int v = e[1] - 1;
-    //     adj[u].push_back(v);
-    //     adj[v].push_back(u);
+    //     adj[Edges[i][0] - 1].push_back(Edges[i][1] - 1);
+    //     adj[Edges[i][1] - 1].push_back(Edges[i][0] - 1);
     // }
+    // vector<int> adj[n];
+    for (auto &e : Edges)
+    {
+        int u = e[0] - 1;
+        int v = e[1] - 1;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
 
     vector<bool> visited(N, 0);
 

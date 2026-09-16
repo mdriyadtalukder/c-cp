@@ -1,0 +1,52 @@
+<!-- Write javascript code to create a button with id growButton. 
+ On each click its size increases by 2px. 
+ If its size goes beyond 36px it should stop growing, turn green, and 
+ show an alert saying it's already at max size. -->
+
+<button id="growButton">Click Me</button>
+
+<script>
+const button = document.getElementById("growButton");
+
+let width = 100;
+let height = 40;
+
+button.style.width = width + "px";
+button.style.height = height + "px";
+
+button.addEventListener("click", function () {
+    if (width >= 136) {
+        button.style.backgroundColor = "green";
+        alert("It's already at max size.");
+        return;
+    }
+
+    width += 2;
+    height += 2;
+
+    button.style.width = width + "px";
+    button.style.height = height + "px";
+});
+</script>
+
+
+Question:
+Design an HTML Parser.
+
+Input:
+
+<html>
+    <body>
+        <h1>Hello</h1>
+        <p>Welcome</p>
+    </body>
+</html>
+
+Output:
+
+HTML
+ └── BODY
+      ├── H1
+      │    └── Hello
+      └── P
+           └── Welcome

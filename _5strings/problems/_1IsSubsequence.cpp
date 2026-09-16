@@ -2,19 +2,21 @@
 using namespace std;
 bool isSubsequence(string s, string t)
 {
-    queue<char> st;
-    for (auto a : s)
-    {
-        st.push(a);
-    }
+    if (s.size() == 0)
+        return true;
+    int j = 0;
     for (int i = 0; i < t.size(); i++)
     {
-        if (t[i] == st.front())
+        if (t[i] == s[j])
         {
-            st.pop();
+            j++;
+            if (j == s.size())
+            {
+                return true;
+            }
         }
     }
-    return st.empty();
+    return false;
 }
 int main()
 {

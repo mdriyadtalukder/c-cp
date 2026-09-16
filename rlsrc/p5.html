@@ -1,0 +1,34 @@
+<!-- Write JavaScript code to check if a button is clicked in an HTML element using an EventListener. 
+ Upon clicking, the size of the HTML element should increase by 10%. -->
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background:red;
+}
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+<br>
+<button id="btn">Increase Size</button>
+
+<script>
+const box = document.getElementById("box");
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+    const currentWidth = box.offsetWidth;
+    const currentHeight = box.offsetHeight;
+
+    box.style.width = currentWidth * 1.1 + "px";
+    box.style.height = currentHeight * 1.1 + "px";
+});
+</script>
+
+</body>
+</html>

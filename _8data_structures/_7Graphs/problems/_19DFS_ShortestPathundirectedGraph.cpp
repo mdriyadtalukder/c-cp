@@ -8,10 +8,13 @@ vector<int> shortestPath(vector<pair<int, int>> edges, int N, int M, int src, in
 
     vector<int> adj[N];
 
-    for (int i = 0; i < M; i++)
+    for (auto &e : edges)
     {
-        adj[edges[i].first - 1].push_back(edges[i].second - 1);
-        adj[edges[i].second - 1].push_back(edges[i].first - 1);
+        int u = e.first;
+        int v = e.second;
+
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
 
     src--;
@@ -150,3 +153,5 @@ Approach:
 5. Reverse the collected vertices to obtain the path from
    src to dest.
 */
+
+// vector<int> shortestPath(vector<pair<int, int>> edges, int N, int M, int src, int dest)

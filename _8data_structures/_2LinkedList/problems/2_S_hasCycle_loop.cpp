@@ -6,7 +6,7 @@ fast==slow holei eita cycle..loop
 class Solution
 {
 public:
-    ListNode *middleNode(ListNode *head)
+    bool hasCycle(ListNode *head)
     {
         ListNode *fast = head;
         ListNode *slow = head;

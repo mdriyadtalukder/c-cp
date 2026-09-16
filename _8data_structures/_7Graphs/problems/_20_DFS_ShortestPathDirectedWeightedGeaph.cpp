@@ -3,6 +3,8 @@
 // then oigular dist ber krbo and ans vector e rakhbo
 // sob node er value infinite thkbe 1st e..then pre nodes weight er sum and je node e jabe tar value er min ber kre oi node er value dibo(jetai jabe)
 // jdi visited hy and value boro hy tahole min value ta nibo
+
+
 #include <bits/stdc++.h>
 using namespace std;
 void DFS(int node, vector<pair<int, int>> adj[], stack<int> &s, vector<bool> &visited)

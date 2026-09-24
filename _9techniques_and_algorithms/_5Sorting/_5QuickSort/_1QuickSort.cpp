@@ -3,22 +3,43 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//average/practical Case TC=O(nlogn)
-//worst case TC=O(n^2) //pivot repeatly small or large element hy..
+// average/practical Case TC=O(nlogn)
+// worst case TC=O(n^2) //pivot repeatly small or large element hy..
+/*
+Best/Average: O(n log n)
+
+partition() takes O(n).
+If pivot divides array roughly in half → log n levels.
+So: O(n × log n) = O(n log n).
+
+Worst: O(n²)
+
+If pivot is always smallest/largest → one side has n-1 elements.
+So: n + (n-1) + (n-2) + ... = O(n²).
+
+Space:
+
+Average/Best: O(log n) → recursion depth is log n.
+Worst: O(n) → recursion depth becomes n.
+*/
 int partition(vector<int> &arr, int st, int end)
 {
     int idx = st - 1, pivot = arr[end];
+
     for (int j = st; j < end; j++)
     {
         if (arr[j] <= pivot)
         {
             idx++;
-            swap(arr[j], arr[idx]);
+            swap(arr[j], arr[idx]); // LEFT SIDE: arr[j] <= pivot
         }
+        // RIGHT SIDE: arr[j] > pivot
     }
+
     idx++;
-    swap(arr[end], arr[idx]);
-    return idx;
+    swap(arr[end], arr[idx]); // Put pivot in its correct position
+
+    return idx; // pivot index
 }
 void quickSort(vector<int> &arr, int st, int end)
 {

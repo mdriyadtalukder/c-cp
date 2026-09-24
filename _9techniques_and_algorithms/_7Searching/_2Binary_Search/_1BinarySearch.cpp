@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 //TC=O(logn)..every bar n/2 vag hy..so n/2^k=1 ,n=2^k,logn=k
+//SC=O(1)..You only use variables st, end, and mid..no extra variable used
 
 int binarySearch(vector<int> arr, int tar)
 { // Iterative

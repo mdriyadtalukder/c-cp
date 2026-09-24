@@ -1,14 +1,15 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//eta array  k small sub array te divide kre until single elem hy then sort kre all small sub array and merge kre..
-//TC=O(nlogn)..every bar n/2 vag hy..so n/2^k=1 ,n=2^k,logn=k
-// divide and conquer..1st e divide krbo boro problm ta k choto choto problem e..then choto problem er ans diye oi boro problem er solution ber krbo..its conquer.
+// eta array  k small sub array te divide kre until single elem hy then sort kre all small sub array and merge kre..
+// TC = O(n log n)..mergeSort() divides the array into 2 halves → log n levels..At every level, merge() processes all n elements → O(n)
+// SC=O(n)..for vector<int> temp;
+//  divide and conquer..1st e divide krbo boro problm ta k choto choto problem e..then choto problem er ans diye oi boro problem er solution ber krbo..its conquer.
 void merge(vector<int> &arr, int st, int mid, int end)
 {
     vector<int> temp;
     int i = st, j = mid + 1;
-    while (i <= mid && j <= end) //2 part k merge kora in sort way
+    while (i <= mid && j <= end) // 2 part k merge kora in sort way
     {
         if (arr[i] <= arr[j]) // for decending >=.
         {
@@ -31,11 +32,12 @@ void merge(vector<int> &arr, int st, int mid, int end)
         temp.push_back(arr[j]);
         j++;
     }
-    for (int idx = 0; idx < temp.size(); idx++) // main array 2=5,3=4..after sort in temp 0=3,1=5..so 0+2=3 and 1+2=5 in main array.
-    {
+    for (int idx = 0; idx < temp.size(); idx++)
+        // Put sorted temp elements back into arr
+        // starting from index st.if st=2 then for idex 0,1,2...0+2=temp[0],0+1=temp[1],0+2=temp[2]...so on
         arr[idx + st] = temp[idx];
-    }
 }
+
 void mergeSort(vector<int> &arr, int st, int end)
 {
     if (st < end)

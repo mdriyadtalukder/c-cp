@@ -1,6 +1,8 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+// TC = O(log n)..Because in every recursive call, the search range is divided by 2:
+//  SC = O(log n)..Because recursion creates a call stack. At most log n recursive calls are active at once.
 int recBinarySearch(vector<int> arr, int tar, int st, int end)
 { // recursion
     if (st <= end)

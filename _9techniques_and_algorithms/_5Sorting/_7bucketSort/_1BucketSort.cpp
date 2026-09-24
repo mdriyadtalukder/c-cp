@@ -1,4 +1,5 @@
-// element k n dara gun krbo in int then oi index e dukabo in 2d array..then 2d array and er sub array sort krbo then oigula sob main array te insert krbo sot wise
+// element k n dara gun krbo in int then oi index e dukabo in 2d array.
+//.then 2d array and er sub array sort krbo then oigula sob main array te insert krbo sot wise
 #include <bits/stdc++.h>
 using namespace std;
 //tc=O(N+K)..WORST CASE TC=o(n^2)

@@ -1,7 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// brute force
 void moveZeroes(vector<int> &nums)
+{
+    vector<int> v;
+    int c = 0;
+    for (int n : nums)
+    {
+        if (n != 0)
+        {
+            v.push_back(n);
+            c++;
+        };
+    }
+    for (int i = c; i < nums.size(); i++)
+    {
+        v.push_back(0);
+    }
+    for (int i = 0; i < nums.size(); i++)
+    {
+        nums[i] = v[i];
+    }
+}
+
+// optimal
+void moveZeroes2(vector<int> &nums)
 {
     for (int i = 0, j = 0; i < nums.size(); i++)
     {
@@ -17,22 +41,9 @@ void moveZeroes(vector<int> &nums)
 
 int main()
 {
-    int n;
-    cin >> n;
 
-    vector<int> nums(n);
-
-    for (int i = 0; i < n; i++)
-    {
-        cin >> nums[i];
-    }
-
+    vector<int> nums = {1, 2, 3, 0, 5, 0, 6, 0, 2};
     moveZeroes(nums);
-
-    for (int x : nums)
-    {
-        cout << x << " ";
-    }
 
     return 0;
 }

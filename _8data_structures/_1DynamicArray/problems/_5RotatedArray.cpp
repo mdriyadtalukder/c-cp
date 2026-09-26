@@ -1,6 +1,6 @@
 // #include <bits/stdc++.h>
 // using namespace std;
-
+// brute force
 // vector<int> rotation(vector<int> &a, int k)
 // {
 //     int n = a.size();
@@ -40,7 +40,7 @@
 // }
 #include <bits/stdc++.h>
 using namespace std;
-
+// optimal
 void swapping(vector<int> &a, int i, int j)
 {
     int temp = a[i];

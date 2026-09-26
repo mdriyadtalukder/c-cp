@@ -1,6 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// brute force
+int firstMissingPositive(vector<int> &nums)
+{
+    sort(nums.begin(), nums.end());
+    set<int> s;
+    vector<int> v;
+    for (int &n : nums)
+    {
+        if (n > 0)
+        {
+            if (s.find(n) == s.end())
+            {
+                v.push_back(n);
+                s.insert(n);
+            }
+        };
+    }
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        if (v[i] != i + 1)
+            return i + 1;
+    }
+    return v.size() + 1;
+}
+
+// optimal (cyclic sort)
 int firstMissingPositive(vector<int> &nums)
 {
     int n = nums.size();
@@ -8,7 +35,7 @@ int firstMissingPositive(vector<int> &nums)
     // Cyclic sort (index placement)
     for (int i = 0; i < n; i++)
     {
-        while (nums[i] >0 && nums[i] <= n && nums[nums[i] - 1] != nums[i])
+        while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i])
         {
             swap(nums[i], nums[nums[i] - 1]);
         }

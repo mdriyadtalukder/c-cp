@@ -1,29 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-// every 0 er rage count kre then oi count*2-1  krbo..every zero er subarray zero like 000 ekhne 2 ta 00,2 ta 0 o 1 ta 000 subarray ase..
-int main()
+class Solution
 {
-    vector<int> v = {1, 3, 0, 0, 2, 0, 0, 4};
-
-    long long c = 0, r = 0;
-
-    for (int i = 0; i < v.size(); i++)
+public:
+    long long zeroFilledSubarray(vector<int> &nums)
     {
-        if (v[i] == 0)
+        long long count = 0;
+        int consecutiveZeros = 0;
+
+        for (int num : nums)
         {
-            c++;
+            if (num == 0)
+            {
+                consecutiveZeros++;
+            }
+            else
+            {
+                consecutiveZeros = 0;
+            }
+            // Each new zero in a run of length k adds k new subarrays
+            count += consecutiveZeros;
         }
-        else
-        {
-            r += (c * (c + 1)) / 2; //(c*2)-1...c=4, so,1 + 2 + 3 + 4 = 10..10 ta subarray 0 hbe.
-            c = 0;
-        }
+
+        return count;
     }
-
-    // handle last zero segment (if array ends with 0)
-    r += (c * (c + 1)) / 2;
-
-    cout << r;
-
-    return 0;
-}
+};

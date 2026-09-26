@@ -3,6 +3,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// brute force
+vector<int> productExceptSelf(vector<int> &nums)
+{
+    vector<int> v;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        int mul = 1;
+        for (int j = 0; j < nums.size(); j++)
+        {
+            if (j == i)
+                continue;
+            mul *= nums[j];
+        }
+        v.push_back(mul);
+    }
+    return v;
+}
+
+//optimal (prefix sufix)
 int main()
 {
     vector<int> nums = {1, 2, 3, 4};
@@ -21,8 +40,8 @@ int main()
     // suffix
     for (int i = n - 2; i >= 0; i--)
     {
-        suffix =suffix* nums[i + 1]; // ith suffix
-        ans[i] =ans[i]* suffix;
+        suffix = suffix * nums[i + 1]; // ith suffix
+        ans[i] = ans[i] * suffix;
     }
 
     // print result
@@ -34,8 +53,9 @@ int main()
     return 0;
 }
 
-// #include <bits/stdc++.h>
-// using namespace std;
+// brute force 2
+//  #include <bits/stdc++.h>
+//  using namespace std;
 
 // int main()
 // {

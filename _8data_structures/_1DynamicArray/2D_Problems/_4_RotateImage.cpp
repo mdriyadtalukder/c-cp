@@ -1,14 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
-#roated Array in 90 degree
 
+//brute force
+void reverses(vector<int> &a)
+{
+    reverse(a.begin(), a.end());
+}
+void rotate(vector<vector<int>> &matrix)
+{
+    vector<vector<int>> m(matrix.size(), vector<int>(matrix.size()));
 
-it has 2 step
+    for (int i = 0; i < matrix.size(); i++)
+    {
+        for (int j = 0; j < matrix.size(); j++)
+        {
+            m[j][i] = matrix[i][j];
+        }
+    }
+    for (int i = 0; i < m.size(); i++)
+    {
+        reverses(m[i]);
+    }
 
-1.convert into transpose matrix
-2.then rotate each row
-*/
+    for (int i = 0; i < m.size(); i++)
+    {
+        for (int j = 0; j < m.size(); j++)
+        {
+            matrix[i][j] = m[i][j];
+        }
+    }
+}
+
+//optimal
 void rotateRow(vector<int> &ar)
 {
     int i = 0, j = ar.size() - 1;

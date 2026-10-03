@@ -2,27 +2,26 @@
 using namespace std;
 
 // brute force
-vector<int> spiralOrder(vector<vector<int>> &matrix)
+vector<vector<int>> generateMatrix(int n)
 {
-    int m = matrix.size(), n = matrix[0].size();
-    vector<vector<bool>> visited(m, vector<bool>(n, false));
-    vector<int> result;
+    vector<vector<bool>> visited(n, vector<bool>(n, false));
+    vector<vector<int>> result(n, vector<int>(n, 0));
 
     // Direction vectors: right, down, left, up
     int dr[] = {0, 1, 0, -1};
     int dc[] = {1, 0, -1, 0};
     int dir = 0;
-    int row = 0, col = 0;
+    int row = 0, col = 0, num = 1;
 
-    for (int i = 0; i < m * n; i++)
+    for (int i = 0; i < n * n; i++)
     {
-        result.push_back(matrix[row][col]);
+        result[row][col] = num++;
         visited[row][col] = true;
 
         int nextRow = row + dr[dir];
         int nextCol = col + dc[dir];
 
-        if (nextRow < 0 || nextRow >= m || nextCol < 0 || nextCol >= n || visited[nextRow][nextCol])
+        if (nextRow < 0 || nextRow >= n || nextCol < 0 || nextCol >= n || visited[nextRow][nextCol])
         {
             dir = (dir + 1) % 4;
             nextRow = row + dr[dir];
@@ -36,18 +35,18 @@ vector<int> spiralOrder(vector<vector<int>> &matrix)
     return result;
 }
 
-// optimal
-vector<int> spiralOrder2(vector<vector<int>> &matrix)
+//optimal
+vector<vector<int>> generateMatrix2(int n)
 {
-    vector<int> ans;
+    vector<vector<int>> ans(n, vector<int>(n, 0));
 
-    int r = matrix.size();
-    int c = matrix[0].size();
+    int r = n;
+    int c = n;
 
     int topRow = 0, bottomRow = r - 1;
     int leftCol = 0, rightCol = c - 1;
 
-    int total = 0;
+    int total = 0, num = 1;
 
     while (total < r * c)
     {
@@ -55,7 +54,7 @@ vector<int> spiralOrder2(vector<vector<int>> &matrix)
         // left → right
         for (int i = leftCol; i <= rightCol && total < r * c; i++)
         {
-            ans.push_back(matrix[topRow][i]);
+            ans[topRow][i] = num++;
             total++;
         }
         topRow++;
@@ -63,7 +62,8 @@ vector<int> spiralOrder2(vector<vector<int>> &matrix)
         // top | bottom
         for (int i = topRow; i <= bottomRow && total < r * c; i++)
         {
-            ans.push_back(matrix[i][rightCol]);
+            ans[i][rightCol] = num++;
+            ;
             total++;
         }
         rightCol--;
@@ -71,7 +71,8 @@ vector<int> spiralOrder2(vector<vector<int>> &matrix)
         // right <- left
         for (int i = rightCol; i >= leftCol && total < r * c; i--)
         {
-            ans.push_back(matrix[bottomRow][i]);
+            ans[bottomRow][i] = num++;
+            ;
             total++;
         }
         bottomRow--;
@@ -79,7 +80,8 @@ vector<int> spiralOrder2(vector<vector<int>> &matrix)
         // bottom |^ top
         for (int i = bottomRow; i >= topRow && total < r * c; i--)
         {
-            ans.push_back(matrix[i][leftCol]);
+            ans[i][leftCol] = num++;
+            ;
             total++;
         }
         leftCol++;

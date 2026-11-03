@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//brute force
+// brute force
 void reverses(vector<int> &a)
 {
     reverse(a.begin(), a.end());
@@ -19,7 +19,7 @@ void rotate(vector<vector<int>> &matrix)
     }
     for (int i = 0; i < m.size(); i++)
     {
-        reverses(m[i]);
+        reverses(m[i]); // or reverse(m[i].begin(),m[i].end());
     }
 
     for (int i = 0; i < m.size(); i++)
@@ -31,7 +31,7 @@ void rotate(vector<vector<int>> &matrix)
     }
 }
 
-//optimal
+// optimal
 void rotateRow(vector<int> &ar)
 {
     int i = 0, j = ar.size() - 1;
@@ -59,7 +59,7 @@ void rotate90(vector<vector<int>> &ar, int r, int c)
     // Reverse each row
     for (int i = 0; i < r; i++)
     {
-        rotateRow(ar[i]);
+        rotateRow(ar[i]); // or reverse(ar[i].begin(),ar[i].end());
     }
 }
 

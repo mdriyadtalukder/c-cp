@@ -6,13 +6,13 @@ using namespace std;
 int removeDuplicates(vector<int> &nums)
 {
     map<int, int> m;
+    vector<int>v;
 
     for (auto &n : nums)
     {
         m[n]++;
     }
 
-    int j = 0;
 
     for (auto &i : m)
     {
@@ -26,12 +26,15 @@ int removeDuplicates(vector<int> &nums)
     {
         while (i.second > 0)
         {
-            nums[j++] = i.first;
+            v.push_back(i.first);
             i.second--;
         }
     }
+    for(int i=0;i<v.size();i++){
+        nums[i]=v[i];
+    }
 
-    return j;
+    return v.size();
 }
 
 // optimal

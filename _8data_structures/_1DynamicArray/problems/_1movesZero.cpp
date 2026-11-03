@@ -11,10 +11,13 @@ void moveZeroes(vector<int> &nums)
         if (n != 0)
         {
             v.push_back(n);
+        }
+        else
+        {
             c++;
-        };
+        }
     }
-    for (int i = c; i < nums.size(); i++)
+    for (int i = 0; i < c; i++)
     {
         v.push_back(0);
     }

@@ -13,7 +13,7 @@ vector<vector<int>> candyCrush(vector<vector<int>> &board)
         shouldContinue = false;
         vector<vector<bool>> crush(m, vector<bool>(n, false));
 
-        // Mark horizontal runs of 3+
+        // Mark horizontal runs of 3+..row
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n - 2; j++)
@@ -27,7 +27,7 @@ vector<vector<int>> candyCrush(vector<vector<int>> &board)
             }
         }
 
-        // Mark vertical runs of 3+
+        // Mark vertical runs of 3+..col
         for (int i = 0; i < m - 2; i++)
         {
             for (int j = 0; j < n; j++)

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//brute force
+// brute force
 vector<int> shuffle(vector<int> &nums, int n)
 {
     vector<int> v;
@@ -10,25 +10,25 @@ vector<int> shuffle(vector<int> &nums, int n)
 
     while (j < nums.size())
     {
-        k++;
 
-        if (k % 2 != 0)
+        if (k % 2 == 0)
         {
             v.push_back(nums[i]);
             i++;
+            k++;
         }
         else
         {
             v.push_back(nums[j]);
             j++;
+            k++;
         }
     }
 
     return v;
 }
 
-
-//optimal
+// optimal
 vector<int> shuffle2(vector<int> &nums, int n)
 {
     int maxVal = 1001;

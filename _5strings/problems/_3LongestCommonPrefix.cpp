@@ -1,6 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
+// brute force
+string longestCommonPrefix(vector<string> &strs)
+{
+    string ans = strs[0], l = "";
+    for (int i = 1; i < strs.size(); i++)
+    {
+        string s = strs[i];
+        for (int j = 0; j < ans.size(); j++)
+        {
+            if (ans[j] == s[j])
+            {
+                l.push_back(ans[j]);
+            }
+            else
+            {
+                ans = l;
+                l = "";
+            }
+            if (!l.empty() && j == ans.size() - 1)
+            {
+                ans = l;
+                l = "";
+            }
+        }
+    }
+    if (!l.empty())
+    {
+        ans = l;
+        l = "";
+    }
+    return ans;
+}
 
+// optimal
 string longestCommonPrefix(vector<string> &s)
 {
     if (s.empty())

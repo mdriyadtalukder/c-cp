@@ -2,18 +2,29 @@
 using namespace std;
 
 // brute force
+// bool rotateString(string s, string goal)
+// {
+//     if (s == goal)
+//         return true;
+//     if (s.size() != goal.size())
+//         return false;
+//     for (int i = 1; i < s.size(); i++)
+//     {
+//         string l = s.substr(i) + s.substr(0, i);
+//         if (l == goal)
+//             return true;
+//     }
+//     return false;
+// }
 bool rotateString(string s, string goal)
 {
     if (s == goal)
         return true;
     if (s.size() != goal.size())
         return false;
-    for (int i = 1; i < s.size(); i++)
-    {
-        string l = s.substr(i) + s.substr(0, i);
-        if (l == goal)
-            return true;
-    }
+    string s2 = s + s;
+    if (s2.find(goal) != string::npos)
+        return true;
     return false;
 }
 

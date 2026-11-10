@@ -28,7 +28,7 @@ bool validPalindrome(string s)
     int n = s.size();
     for (int i = 0; i < n; i++)
     {
-        string candidate = s.substr(0, i) + s.substr(i + 1);
+        string candidate = s.substr(0, i) + s.substr(i + 1); //skip i th elemenet
         if (isPalindrome(candidate))
         {
             return true;

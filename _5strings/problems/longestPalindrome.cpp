@@ -7,7 +7,7 @@ int longestPalindrome(string s)
     int length = 0;
     for (char c : s)
     {
-        if (oddChars.count(c))
+        if (oddChars.find(c) != oddChars.end())
         {
             // Pair completed, add 2 to length
             oddChars.erase(c);

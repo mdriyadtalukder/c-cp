@@ -58,7 +58,7 @@ string convert(string s, int numRows)
     }
     return result;
 }
-//optimal
+// optimal
 
 /*
 Row 0: P   A   H   N
@@ -89,7 +89,7 @@ string convert(string s, int numRows)
             result += s[j];
 
             // middle rows(jumps er ta + jumps-2*i er ta..coz eder 2 jaigai value thke)--i row no
-            if (i > 0 && i < numRows - 1 && (j + jumps - 2 * i) < s.size())
+            if (i > 0 && i < numRows - 1 && (j + jumps - 2 * i) < s.size()) // i > 0 && i < numRows - 1 last and 1st ta bad
             {
                 result += s[j + jumps - 2 * i];
             }

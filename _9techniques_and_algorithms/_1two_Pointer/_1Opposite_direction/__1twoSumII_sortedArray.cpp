@@ -10,7 +10,7 @@ vector<int> twoSum(vector<int> &nums, int target)
         {
             if (nums[i] + nums[j] == target)
             {
-                return {i, j};
+                return {i + 1, j + 1};
             }
         }
     }
